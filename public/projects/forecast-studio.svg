@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Forecast Studio visualization</title>
+  <desc id="desc">Abstract gradient with rising bars representing forecasting models.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#14b8a6"/>
+    </linearGradient>
+    <linearGradient id="bars" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.15)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.6)"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g transform="translate(140,140)" fill="url(#bars)">
+    <rect x="0" y="240" width="180" height="240" rx="28"/>
+    <rect x="220" y="180" width="180" height="300" rx="28"/>
+    <rect x="440" y="100" width="180" height="380" rx="28"/>
+    <rect x="660" y="40" width="180" height="440" rx="28"/>
+  </g>
+  <path d="M140,480 C220,420 300,380 380,360 C460,340 540,340 620,360 C700,380 780,420 860,420 C940,420 1020,380 1100,320" stroke="rgba(255,255,255,0.45)" stroke-width="8" fill="none" stroke-linecap="round"/>
+</svg>

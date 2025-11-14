@@ -1,0 +1,11 @@
+[
+  {
+    "path": "/*",
+    "timings": [
+      { "metric": "largest-contentful-paint", "threshold": 2500 },
+      { "metric": "cumulative-layout-shift", "threshold": 0.1 }
+    ],
+    "resourceSizes": [],
+    "resourceCounts": []
+  }
+]

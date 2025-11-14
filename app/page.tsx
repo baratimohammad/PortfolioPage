@@ -1,65 +1,199 @@
-import Image from "next/image";
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { ServicesGrid } from "@/components/sections/services-grid";
+
+/*
+const ValuePropsSection = dynamic(
+  () =>
+    import("@/components/sections/value-props").then(
+      (mod) => mod.ValuePropsSection,
+    ),
+  {
+    ssr: false,
+    loading: () => (
+      <SectionSkeleton label="Capabilities" variant="muted" />
+    ),
+  },
+);
+
+const CaseStudiesSection = dynamic(
+  () =>
+    import("@/components/sections/case-studies").then(
+      (mod) => mod.CaseStudiesSection,
+    ),
+  {
+    ssr: false,
+    loading: () => <SectionSkeleton label="Case studies" />,
+  },
+);
+*/
+
+/*
+const projects = [
+  {
+    name: "StreamPulse Insights",
+    summary:
+      "Real-time analytics platform turning raw streaming telemetry into alerting and reporting pipelines.",
+    stack: ["TypeScript", "Kafka", "dbt"],
+  },
+  {
+    name: "Forecast Studio",
+    summary:
+      "Interactive forecasting toolkit used by product and finance teams to explore scenarios in minutes.",
+    stack: ["Next.js", "DuckDB", "PyTorch"],
+  },
+  {
+    name: "Unified Metrics Hub",
+    summary:
+      "Self-service metrics layer that reduced dashboard delivery time by 60% across the company.",
+    stack: ["Snowflake", "Dagster", "React"],
+  },
+] as const;
+*/
+
+/*
+const valueProps = [
+  {
+    icon: BarChart3,
+    title: "Operational clarity delivered with real-time analytics and reporting.",
+  },
+  {
+    icon: Layers,
+    title: "Composable data stacks that scale with your product teams.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Robust governance baked-in so insights stay trusted and secure.",
+  },
+] as const;
+*/
 
 export default function Home() {
+  const shouldReduceMotion = useReducedMotion();
+  const heroInitial = shouldReduceMotion ? undefined : { opacity: 0, y: 18 };
+  const heroAnimate = shouldReduceMotion ? undefined : { opacity: 1, y: 0 };
+  const heroTransition = shouldReduceMotion
+    ? undefined
+    : { duration: 0.6 };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="flex min-h-screen flex-col gap-20 py-24">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
+        <motion.section
+          initial={heroInitial}
+          animate={heroAnimate}
+          transition={heroTransition}
+          className="relative overflow-hidden rounded-3xl border border-border/60 bg-background/70 p-10 shadow-subtle sm:p-16"
+        >
+          <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.25),_transparent_55%),radial-gradient(circle_at_bottom_right,_rgba(16,185,129,0.2),_transparent_50%)]" />
+          <div className="max-w-3xl space-y-6">
+            <div className="space-y-4">
+              <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+                Turning your data into insight.
+              </h1>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                I architect analytics platforms that surface the right signals at the
+                right moment so product and ops teams can move with confidence.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-subtle transition hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
+              >
+                View Portfolio
+                <ArrowUpRight className="h-4 w-4" aria-hidden />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-border/70 px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        </motion.section>
+      </div>
+
+      {/* <ValuePropsSection
+        valueProps={valueProps}
+        reduceMotion={shouldReduceMotion}
+      /> */}
+
+      <section className="bg-background" aria-labelledby="home-services-title">
+        <div className="mx-auto w-full max-w-6xl space-y-8 px-4 sm:px-6 lg:px-8">
+          <div className="space-y-2">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              Services
+            </p>
+            <h2
+              id="home-services-title"
+              className="text-3xl font-semibold text-foreground sm:text-4xl"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              Tailored engagements to move from data to impact.
+            </h2>
+            <p className="text-base text-muted-foreground sm:text-lg">
+              From modern ELT foundations to ML acceleration, these offerings
+              show how we can collaborate end-to-end.
+            </p>
+          </div>
+          <div className="rounded-3xl border border-border/60 bg-background/80 p-8 shadow-subtle backdrop-blur">
+            <ServicesGrid />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* <CaseStudiesSection
+        projects={projects}
+        reduceMotion={shouldReduceMotion}
+      /> */}
+    </main>
   );
 }
+
+/*
+type SectionSkeletonProps = {
+  label: string;
+  variant?: "default" | "muted";
+};
+
+function SectionSkeleton({
+  label,
+  variant = "default",
+}: SectionSkeletonProps) {
+  const baseClasses =
+    "mx-auto w-full max-w-6xl rounded-3xl border border-border/60 p-8 shadow-subtle";
+  const styles: Record<
+    NonNullable<SectionSkeletonProps["variant"]>,
+    string
+  > = {
+    default: "bg-background/70",
+    muted: "bg-muted/40",
+  };
+
+  return (
+    <section
+      className="px-4 py-8 sm:px-6 lg:px-8"
+      aria-busy="true"
+      aria-live="polite"
+    >
+      <div className={`${baseClasses} ${styles[variant]}`}>
+        <p className="text-sm font-medium text-muted-foreground">
+          Loading {label}&hellip;
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {[0, 1, 2, 3].map((item) => (
+            <div
+              key={item}
+              className="h-20 rounded-2xl bg-border/40 animate-pulse"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+*/

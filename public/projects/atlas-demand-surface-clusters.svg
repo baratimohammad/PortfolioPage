@@ -1,0 +1,22 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="32" fill="#041225" />
+  <g stroke="#ffffff" stroke-opacity="0.08">
+    <path d="M0 120H1200" />
+    <path d="M0 240H1200" />
+    <path d="M0 360H1200" />
+    <path d="M0 480H1200" />
+    <path d="M0 600H1200" />
+    <path d="M200 0V720" />
+    <path d="M400 0V720" />
+    <path d="M600 0V720" />
+    <path d="M800 0V720" />
+    <path d="M1000 0V720" />
+  </g>
+  <g>
+    <circle cx="260" cy="300" r="48" fill="#22d3ee" fill-opacity="0.35" stroke="#22d3ee" stroke-width="4" />
+    <circle cx="520" cy="260" r="60" fill="#f97316" fill-opacity="0.35" stroke="#f97316" stroke-width="4" />
+    <circle cx="760" cy="440" r="70" fill="#a855f7" fill-opacity="0.35" stroke="#a855f7" stroke-width="4" />
+    <circle cx="980" cy="300" r="50" fill="#22c55e" fill-opacity="0.35" stroke="#22c55e" stroke-width="4" />
+  </g>
+  <path d="M220 520C360 460 500 560 640 520C760 484 880 420 1020 460" stroke="#38bdf8" stroke-width="8" stroke-linecap="round" stroke-dasharray="16 18" />
+</svg>

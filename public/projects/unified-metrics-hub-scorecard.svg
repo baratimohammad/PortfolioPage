@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Unified Metrics Hub executive scorecard</title>
+  <desc id="desc">Executive scorecard layout with KPI tiles and trend lines.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#4c1d95"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g transform="translate(140,120)">
+    <rect width="920" height="480" rx="32" fill="rgba(17,24,39,0.75)" stroke="rgba(255,255,255,0.08)" stroke-width="2"/>
+    <rect x="60" y="60" width="220" height="120" rx="20" fill="rgba(99,102,241,0.18)"/>
+    <rect x="320" y="60" width="220" height="120" rx="20" fill="rgba(129,140,248,0.18)"/>
+    <rect x="580" y="60" width="220" height="120" rx="20" fill="rgba(139,92,246,0.18)"/>
+    <rect x="60" y="220" width="740" height="240" rx="24" fill="rgba(79,70,229,0.12)"/>
+  </g>
+  <g transform="translate(200,240)" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M0,180 C90,140 180,160 270,120 C360,80 450,100 540,80 C630,60 720,40 810,60" stroke="#8b5cf6"/>
+    <path d="M0,220 C90,180 180,200 270,170 C360,140 450,160 540,150 C630,140 720,120 810,140" stroke="rgba(139,92,246,0.4)"/>
+  </g>
+  <g transform="translate(200,180)">
+    <rect width="120" height="12" rx="6" fill="rgba(255,255,255,0.6)"/>
+    <rect y="28" width="200" height="8" rx="4" fill="rgba(255,255,255,0.4)"/>
+  </g>
+</svg>

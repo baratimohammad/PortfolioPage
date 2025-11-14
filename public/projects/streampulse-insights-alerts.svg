@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">StreamPulse alert drilldown</title>
+  <desc id="desc">Alert detail card with correlated metrics and resolution timeline.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g transform="translate(180,140)">
+    <rect width="840" height="440" rx="32" fill="rgba(15,23,42,0.7)" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+    <rect x="40" y="40" width="360" height="80" rx="20" fill="rgba(255,255,255,0.1)"/>
+    <rect x="40" y="140" width="720" height="12" rx="6" fill="rgba(255,255,255,0.2)"/>
+    <rect x="40" y="172" width="720" height="12" rx="6" fill="rgba(255,255,255,0.15)"/>
+    <rect x="40" y="204" width="720" height="12" rx="6" fill="rgba(255,255,255,0.1)"/>
+    <rect x="40" y="260" width="720" height="120" rx="24" fill="rgba(15,23,42,0.6)"/>
+    <rect x="40" y="400" width="720" height="32" rx="16" fill="rgba(248,250,252,0.65)"/>
+  </g>
+  <g transform="translate(220,420)">
+    <rect width="640" height="20" rx="10" fill="url(#accent)"/>
+    <rect y="40" width="480" height="20" rx="10" fill="rgba(59,130,246,0.4)"/>
+  </g>
+  <circle cx="260" cy="212" r="10" fill="#f97316"/>
+  <circle cx="420" cy="212" r="10" fill="#ef4444"/>
+  <circle cx="580" cy="212" r="10" fill="#38bdf8"/>
+</svg>

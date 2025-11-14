@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Forecast Studio scenario comparison</title>
+  <desc id="desc">Scenario cards comparing baseline and optimistic projections.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g transform="translate(200,160)">
+    <rect width="320" height="360" rx="32" fill="rgba(14,165,233,0.06)" stroke="rgba(14,165,233,0.2)" stroke-width="2"/>
+    <rect x="360" width="320" height="360" rx="32" fill="rgba(236,72,153,0.06)" stroke="rgba(236,72,153,0.2)" stroke-width="2"/>
+    <rect x="40" y="40" width="200" height="16" rx="8" fill="rgba(255,255,255,0.6)"/>
+    <rect x="400" y="40" width="200" height="16" rx="8" fill="rgba(255,255,255,0.6)"/>
+    <rect x="40" y="80" width="220" height="10" rx="5" fill="rgba(255,255,255,0.3)"/>
+    <rect x="400" y="80" width="220" height="10" rx="5" fill="rgba(255,255,255,0.3)"/>
+  </g>
+  <g transform="translate(220,320)" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M0,120 C40,100 80,80 120,90 C160,100 200,140 240,160 C280,180 320,170 360,140" stroke="#0ea5e9"/>
+    <path d="M360,120 C400,100 440,80 480,90 C520,100 560,140 600,160 C640,180 680,170 720,140" stroke="#ec4899"/>
+  </g>
+</svg>

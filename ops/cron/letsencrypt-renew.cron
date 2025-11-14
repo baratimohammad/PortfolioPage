@@ -1,0 +1,2 @@
+# Run every Monday at 03:15 UTC to renew certificates and reload nginx.
+15 3 * * 1 cd /path/to/max-portfolio && docker run --rm -v /path/to/max-portfolio/docker/certbot/conf:/etc/letsencrypt -v /path/to/max-portfolio/docker/certbot/www:/var/www/certbot certbot/certbot:latest renew --webroot --webroot-path=/var/www/certbot && docker compose -f /path/to/max-portfolio/docker-compose.yml exec nginx nginx -s reload

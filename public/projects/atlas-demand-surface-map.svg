@@ -1,0 +1,16 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="720" rx="36" fill="#031420" />
+  <path d="M80 100h1040v520H80z" fill="#0f1c2e" stroke="#1f2937" stroke-width="4" />
+  <g stroke="#1d4ed8" stroke-opacity="0.3" stroke-width="2">
+    <path d="M120 220l180-60 200 120 180-60 220 140" />
+    <path d="M120 320l160 40 220-100 200 160 180-40" />
+  </g>
+  <g>
+    <circle cx="260" cy="260" r="18" fill="#22d3ee" />
+    <circle cx="420" cy="320" r="22" fill="#0ea5e9" />
+    <circle cx="600" cy="260" r="26" fill="#fde047" />
+    <circle cx="780" cy="360" r="24" fill="#fb7185" />
+    <circle cx="940" cy="300" r="20" fill="#34d399" />
+  </g>
+  <text x="160" y="560" fill="#94a3b8" font-family="'Inter', 'Segoe UI', sans-serif" font-size="28" opacity="0.8">Courier coverage vs. demand hotspots</text>
+</svg>

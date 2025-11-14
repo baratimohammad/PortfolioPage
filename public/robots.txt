@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://max-portfolio.com
+
+# Sitemaps
+Sitemap: https://max-portfolio.com/sitemap.xml

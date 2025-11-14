@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Unified Metrics Hub data lineage</title>
+  <desc id="desc">Graph view of metrics lineage showing connected nodes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g stroke="rgba(255,255,255,0.3)" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M240,360 L420,260 L600,360 L780,260 L960,360"/>
+    <path d="M240,360 L420,460 L600,360 L780,460 L960,360"/>
+  </g>
+  <g fill="rgba(255,255,255,0.7)">
+    <circle cx="240" cy="360" r="30"/>
+    <circle cx="420" cy="260" r="24"/>
+    <circle cx="420" cy="460" r="24"/>
+    <circle cx="600" cy="360" r="32"/>
+    <circle cx="780" cy="260" r="24"/>
+    <circle cx="780" cy="460" r="24"/>
+    <circle cx="960" cy="360" r="30"/>
+  </g>
+  <g fill="rgba(255,255,255,0.35)">
+    <rect x="210" y="500" width="60" height="12" rx="6"/>
+    <rect x="390" y="200" width="60" height="12" rx="6"/>
+    <rect x="570" y="420" width="60" height="12" rx="6"/>
+  </g>
+</svg>

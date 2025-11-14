@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Unified Metrics Hub visualization</title>
+  <desc id="desc">Abstract gradient with interconnected nodes representing unified metrics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g stroke="rgba(255,255,255,0.35)" stroke-width="3" fill="none">
+    <path d="M220,360 L420,220 L600,320 L780,180 L980,320 L1080,520"/>
+    <path d="M220,360 L420,500 L600,400 L780,560 L980,420 L1080,520"/>
+  </g>
+  <g fill="rgba(255,255,255,0.65)">
+    <circle cx="220" cy="360" r="26"/>
+    <circle cx="420" cy="220" r="22"/>
+    <circle cx="420" cy="500" r="20"/>
+    <circle cx="600" cy="320" r="26"/>
+    <circle cx="600" cy="400" r="18"/>
+    <circle cx="780" cy="180" r="22"/>
+    <circle cx="780" cy="560" r="24"/>
+    <circle cx="980" cy="320" r="28"/>
+    <circle cx="980" cy="420" r="20"/>
+    <circle cx="1080" cy="520" r="28"/>
+  </g>
+</svg>

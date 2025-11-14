@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">StreamPulse Insights visualization</title>
+  <desc id="desc">Abstract gradient with flowing wave lines representing streaming data.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.35)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <path d="M0,520 C120,480 240,560 360,520 C480,480 600,360 720,380 C840,400 960,520 1080,500 C1140,492 1200,460 1200,460 L1200,720 L0,720 Z" fill="url(#wave)"/>
+  <path d="M0,420 C120,380 240,460 360,420 C480,380 600,260 720,280 C840,300 960,420 1080,400 C1140,392 1200,360 1200,360" stroke="rgba(255,255,255,0.45)" stroke-width="6" fill="none"/>
+</svg>

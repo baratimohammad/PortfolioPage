@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">StreamPulse dashboard overview</title>
+  <desc id="desc">Responsive dashboard layout with multiple charts illustrating uptime metrics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <g transform="translate(120,100)" fill="rgba(15,23,42,0.65)" stroke="rgba(255,255,255,0.08)" stroke-width="2">
+    <rect width="960" height="520" rx="28"/>
+  </g>
+  <g transform="translate(160,140)">
+    <rect width="360" height="160" rx="20" fill="rgba(255,255,255,0.08)"/>
+    <rect x="400" width="360" height="160" rx="20" fill="rgba(255,255,255,0.08)"/>
+    <rect y="200" width="760" height="240" rx="20" fill="rgba(255,255,255,0.1)"/>
+  </g>
+  <g transform="translate(180,160)">
+    <rect width="120" height="12" rx="6" fill="rgba(255,255,255,0.55)"/>
+    <rect y="24" width="220" height="8" rx="4" fill="rgba(255,255,255,0.35)"/>
+    <rect y="48" width="180" height="8" rx="4" fill="rgba(255,255,255,0.25)"/>
+  </g>
+  <g transform="translate(560,160)">
+    <rect width="120" height="12" rx="6" fill="rgba(255,255,255,0.55)"/>
+    <rect y="24" width="200" height="8" rx="4" fill="rgba(255,255,255,0.35)"/>
+    <rect y="48" width="160" height="8" rx="4" fill="rgba(255,255,255,0.25)"/>
+  </g>
+  <polyline points="200,380 260,340 320,360 380,300 440,320 500,280 560,320 620,260 680,300 740,280 800,320" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
