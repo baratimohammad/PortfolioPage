@@ -3,30 +3,27 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
+import MePortrait from "@/images/Cover.jpeg";
+
 const timeline = [
   {
-    period: "2024",
-    title: "Fractional Head of Data",
-    description:
-      "Embedded with a climate-tech startup to unify telemetry and billing data, shipping a trusted metrics layer in 8 weeks.",
+    period: "January 2025 - May 2025",
+    title: "Data Engineering Internship, Politecnico di Torino - Italy",
+    details: [
+      "Designed ETL pipelines to analyze and monitor the academic performance of DAUIN department’s PhD students at Politecnico di Torino.",
+      "Utilized Python for comprehensive data wrangling and transformation, ensuring high-quality, structured datasets ready for advanced analytics.",
+      "Automated the extraction of key employment data by scraping LinkedIn profiles from predefined URLs, leveraging agentic AI tools (Langchain, Ollama and Tavily).",
+      "Built interactive dashboards using Grafana to visualize performance metrics.",
+      "Containerized the entire data pipeline using Docker, ensuring portability, scalability, and ease of deployment across different environments.",
+    ],
   },
   {
-    period: "2022",
-    title: "Analytics Platform Lead",
-    description:
-      "Scaled the internal analytics platform that serves 200+ stakeholders, introducing governed self-serve reporting.",
-  },
-  {
-    period: "2020",
-    title: "Automation Practice Founder",
-    description:
-      "Launched an automation practice focused on orchestrating ELT workloads and observability for data teams.",
-  },
-  {
-    period: "2018",
-    title: "Data Engineer, Fintech",
-    description:
-      "Built streaming fraud detection pipelines that paired ML scoring with analyst-ready dashboards.",
+    period: "May 2022 - October 2022",
+    title: "Quantitative Analyst Internship, MyDigiPay - Iran",
+    details: [
+      "Conducted SQL queries and performed descriptive and inferential statistics analysis on financial data for credit scoring.",
+      "Collaborated with team members to develop machine learning models for classification and regression.",
+    ],
   },
 ] as const;
 
@@ -86,6 +83,7 @@ export default function AboutPage() {
               and fintech.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
+              {/*
               <div className="rounded-2xl border border-border/60 p-4">
                 <p className="text-sm uppercase tracking-wide text-muted-foreground">
                   Years in the craft
@@ -98,22 +96,20 @@ export default function AboutPage() {
                 </p>
                 <p className="mt-1 text-3xl font-semibold text-foreground">60+</p>
               </div>
+              */}
             </div>
           </div>
           <div className="relative">
-            <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-primary/10 via-background to-emerald-500/10 blur-3xl" />
-            <div className="flex h-full items-center justify-center rounded-3xl border border-border/60 bg-muted/20 p-6">
-              <div className="rounded-[28px] border border-border/60 bg-background/90 p-4 shadow-lg">
-                <Image
-                  src="/profile-avatar.svg"
-                  alt="Portrait of Max Barati"
-                  width={280}
-                  height={280}
-                  className="rounded-2xl border border-border/40 bg-gradient-to-br from-primary/10 via-background to-emerald-500/10 object-cover p-6"
-                  sizes="(min-width: 768px) 280px, 60vw"
-                  priority
-                />
-              </div>
+            <div className="flex h-full items-center justify-center rounded-3xl bg-muted/20 p-6">
+              <Image
+                src={MePortrait}
+                alt="Portrait of Max Barati"
+                width={MePortrait.width}
+                height={MePortrait.height}
+                className="rounded-2xl border border-border/60 object-cover"
+                sizes="(min-width: 768px) 280px, 60vw"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -141,9 +137,17 @@ export default function AboutPage() {
                     <h3 className="text-xl font-semibold text-foreground">
                       {entry.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {entry.description}
-                    </p>
+                    <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                      {entry.details.map((detail) => (
+                        <li key={detail} className="flex items-start gap-2">
+                          <span
+                            aria-hidden="true"
+                            className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary"
+                          />
+                          <span>{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </li>
               ))}
@@ -179,6 +183,7 @@ export default function AboutPage() {
               </ul>
             </div>
 
+            {/*
             <div className="rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
               <header className="space-y-1">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -200,6 +205,7 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
+            */}
           </div>
         </div>
       </section>

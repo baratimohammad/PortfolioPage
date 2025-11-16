@@ -1,6 +1,5 @@
 "use client";
 
-import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -45,7 +44,7 @@ export function SiteHeader() {
           className="text-lg font-semibold tracking-tight text-foreground transition-colors hover:text-primary"
           aria-label="Max home"
         >
-          Max
+          Max Barati    -    Data Engineer | Data Analyst
         </Link>
 
         <nav
@@ -75,7 +74,6 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <button
             type="button"
             onClick={toggleMenu}

@@ -164,7 +164,7 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
                 <button
                   type="button"
                   onClick={() => openPreview(project)}
-                  className="inline-flex items-center rounded-full border border-border/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-foreground transition hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
+                  className="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-primary-foreground shadow-subtle transition hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
                   aria-haspopup="dialog"
                   aria-expanded={expanded}
                   aria-controls="project-preview-panel"

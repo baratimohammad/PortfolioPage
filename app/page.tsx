@@ -91,12 +91,11 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(99,102,241,0.25),_transparent_55%),radial-gradient(circle_at_bottom_right,_rgba(16,185,129,0.2),_transparent_50%)]" />
           <div className="max-w-3xl space-y-6">
             <div className="space-y-4">
-              <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-                Turning your data into insight.
+              <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+                Engineering the Backbone of Data-Driven Decisions
               </h1>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                I architect analytics platforms that surface the right signals at the
-                right moment so product and ops teams can move with confidence.
+                I design data systems that turn raw inputs into trusted insights—enabling teams to move fast, make confident decisions, and execute without hesitation.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
@@ -135,10 +134,10 @@ export default function Home() {
             >
               Tailored engagements to move from data to impact.
             </h2>
-            <p className="text-base text-muted-foreground sm:text-lg">
-              From modern ELT foundations to ML acceleration, these offerings
-              show how we can collaborate end-to-end.
-            </p>
+            {/* <p className="text-base text-muted-foreground sm:text-lg">
+              From modern ELT foundations to actionable analytics experiences,
+              these offerings show how we can collaborate end-to-end.
+            </p> */}
           </div>
           <div className="rounded-3xl border border-border/60 bg-background/80 p-8 shadow-subtle backdrop-blur">
             <ServicesGrid />
