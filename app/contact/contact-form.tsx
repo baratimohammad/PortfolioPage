@@ -138,7 +138,7 @@ export function ContactForm() {
             required
             minLength={2}
             maxLength={80}
-            placeholder="Ada Lovelace"
+            placeholder="Max Barati"
             className="w-full rounded-2xl border border-border/60 bg-background px-4 py-3 text-base text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50"
             aria-invalid={Boolean(fieldError.name)}
             aria-describedby={getDescribedBy("name")}
@@ -156,7 +156,7 @@ export function ContactForm() {
             type="email"
             name="email"
             required
-            placeholder="you@example.com"
+            placeholder="maximobarati@gmail.com"
             className="w-full rounded-2xl border border-border/60 bg-background px-4 py-3 text-base text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50"
             aria-invalid={Boolean(fieldError.email)}
             aria-describedby={getDescribedBy("email")}
@@ -169,7 +169,7 @@ export function ContactForm() {
         </label>
       </div>
 
-      <label className="space-y-2 text-sm font-medium text-foreground">
+      {/* <label className="space-y-2 text-sm font-medium text-foreground">
         Project budget (optional)
         <input
           type="text"
@@ -188,7 +188,7 @@ export function ContactForm() {
         <p id="budget-help" className="text-xs text-muted-foreground">
           Helps me scope timelines faster but fully optional.
         </p>
-      </label>
+      </label> */}
 
       <label className="space-y-2 text-sm font-medium text-foreground">
         Message
@@ -198,7 +198,7 @@ export function ContactForm() {
           minLength={20}
           maxLength={1000}
           rows={6}
-          placeholder="Share goals, current stack, and timelines…"
+          placeholder="How can I help? Give me the details you think matter."
           className="w-full rounded-2xl border border-border/60 bg-background px-4 py-3 text-base text-foreground outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/50"
           aria-invalid={Boolean(fieldError.message)}
           aria-describedby={getDescribedBy("message")}

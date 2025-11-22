@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { Project } from "@/types/project";
 
-const TAG_FILTERS = ["data viz", "machine learning", "web"] as const;
+const TAG_FILTERS = ["ETL/ELT", "Data Viz", "IoT"] as const;
 
 export function PortfolioGrid({ projects }: { projects: Project[] }) {
   const [activeTag, setActiveTag] = useState<string | null>(null);

@@ -5,9 +5,17 @@
     "summary": "Real-time telemetry transformed into interactive operations dashboards with proactive alerting for on-call teams.",
     "heroImage": "/projects/streampulse-insights.svg",
     "role": "Lead Data Engineer",
-    "tags": ["data viz", "web"],
+    "tags": [
+      "data viz",
+      "web"
+    ],
     "year": 2024,
-    "stack": ["TypeScript", "Next.js", "Kafka", "dbt"],
+    "stack": [
+      "TypeScript",
+      "Next.js",
+      "Kafka",
+      "dbt"
+    ],
     "links": {
       "caseStudy": "/projects/streampulse-insights",
       "github": "https://github.com/maxbarati/streampulse-insights"
@@ -54,9 +62,17 @@
     "summary": "Scenario planning workbench that helps finance and product teams test assumptions with explainable ML forecasts.",
     "heroImage": "/projects/forecast-studio.svg",
     "role": "Data Science Lead",
-    "tags": ["machine learning", "web"],
+    "tags": [
+      "machine learning",
+      "web"
+    ],
     "year": 2023,
-    "stack": ["Next.js", "DuckDB", "Python", "PyTorch"],
+    "stack": [
+      "Next.js",
+      "DuckDB",
+      "Python",
+      "PyTorch"
+    ],
     "links": {
       "caseStudy": "/projects/forecast-studio",
       "github": "https://github.com/maxbarati/forecast-studio"
@@ -103,9 +119,17 @@
     "summary": "Centralised metrics platform standardising KPIs and refreshing executive scorecards in minutes instead of hours.",
     "heroImage": "/projects/unified-metrics-hub.svg",
     "role": "Analytics Engineering Lead",
-    "tags": ["data viz", "machine learning"],
+    "tags": [
+      "data viz",
+      "machine learning"
+    ],
     "year": 2022,
-    "stack": ["Snowflake", "PostgreSQL", "Dagster", "React"],
+    "stack": [
+      "Snowflake",
+      "PostgreSQL",
+      "Dagster",
+      "React"
+    ],
     "links": {
       "caseStudy": "/projects/unified-metrics-hub",
       "github": "https://github.com/maxbarati/unified-metrics-hub"
@@ -141,153 +165,6 @@
       {
         "src": "/projects/unified-metrics-hub-lineage.svg",
         "alt": "Data lineage explorer showing Dagster asset dependencies.",
-        "width": 1200,
-        "height": 720
-      }
-    ]
-  },
-  {
-    "slug": "atlas-demand-surface",
-    "title": "Atlas Demand Surface",
-    "summary": "Cluster-aware map visualisation that reveals underserved delivery zones using spatial joins and density scoring.",
-    "heroImage": "/projects/atlas-demand-surface.svg",
-    "role": "Spatial Analytics Lead",
-    "tags": ["data viz", "web"],
-    "year": 2024,
-    "stack": ["Next.js", "Mapbox GL", "PostgreSQL"],
-    "links": {
-      "caseStudy": "/projects/atlas-demand-surface",
-      "github": "https://github.com/maxbarati/atlas-demand-surface"
-    },
-    "problem": "City planners lacked a single view to spot cluster-level gaps between courier supply and customer demand.",
-    "goal": "Deliver a performant geospatial explorer that highlights high-potential clusters, overlays demographic context, and exports rollout briefs.",
-    "approach": "Modeled hex-based tiles in PostGIS, applied DBSCAN clustering to courier telemetry, and rendered multi-layer Mapbox scenes with smooth LOD transitions.",
-    "results": "Expansion teams now identify viable neighborhoods in minutes and justify capital requests with deeply contextualized maps.",
-    "metrics": [
-      {
-        "label": "Site evaluation time",
-        "value": "-70%",
-        "description": "Time to shortlist candidate zones."
-      },
-      {
-        "label": "Adoption",
-        "value": "12 regions",
-        "description": "Markets using the explorer monthly."
-      },
-      {
-        "label": "Cluster accuracy",
-        "value": "+18%",
-        "description": "Lift against manual targeting."
-      }
-    ],
-    "gallery": [
-      {
-        "src": "/projects/atlas-demand-surface-clusters.svg",
-        "alt": "Atlas Demand Surface showing choropleth clusters with tooltips.",
-        "width": 1200,
-        "height": 720
-      },
-      {
-        "src": "/projects/atlas-demand-surface-map.svg",
-        "alt": "Map overlay comparing courier density vs. demand hotspots.",
-        "width": 1200,
-        "height": 720
-      }
-    ]
-  },
-  {
-    "slug": "signallift-lab",
-    "title": "SignalLift Lab",
-    "summary": "ML-driven lead scoring pipeline pairing feature store governance with an insight-rich reviewer UI.",
-    "heroImage": "/projects/signallift-lab.svg",
-    "role": "Machine Learning Engineer",
-    "tags": ["machine learning", "web"],
-    "year": 2023,
-    "stack": ["Python", "FastAPI", "TensorFlow", "Next.js"],
-    "links": {
-      "caseStudy": "/projects/signallift-lab",
-      "github": "https://github.com/maxbarati/signallift-lab"
-    },
-    "problem": "Revenue ops could not trust opaque scoring spreadsheets and had no way to inspect how signals affected conversion.",
-    "goal": "Launch a governed ML service with human-friendly explanations so SDRs can prioritize work and learn what drives lift.",
-    "approach": "Built a Python feature store, trained TensorFlow ranking models, deployed FastAPI endpoints with Canary releases, and surfaced SHAP-driven visuals in a Next.js console.",
-    "results": "Sales teams triage leads 2x faster while retaining full transparency into the signals that drive a score.",
-    "metrics": [
-      {
-        "label": "Pipeline velocity",
-        "value": "2.1x",
-        "description": "Increase in qualified leads touched per day."
-      },
-      {
-        "label": "Model refresh",
-        "value": "Weekly",
-        "description": "Automated retraining cadence."
-      },
-      {
-        "label": "Explained variance",
-        "value": "87%",
-        "description": "Share of variance captured by top features."
-      }
-    ],
-    "gallery": [
-      {
-        "src": "/projects/signallift-model.svg",
-        "alt": "SignalLift model health dashboard with SHAP summary.",
-        "width": 1200,
-        "height": 720
-      },
-      {
-        "src": "/projects/signallift-dashboard.svg",
-        "alt": "Lead triage board with prioritized accounts and explanations.",
-        "width": 1200,
-        "height": 720
-      }
-    ]
-  },
-  {
-    "slug": "opspulse-control-tower",
-    "title": "OpsPulse Control Tower",
-    "summary": "Executive-ready Shiny dashboards harmonising IoT telemetry, finance KPIs, and staffing to keep warehouses stable.",
-    "heroImage": "/projects/opspulse-control.svg",
-    "role": "Data Product Manager",
-    "tags": ["data viz", "machine learning"],
-    "year": 2022,
-    "stack": ["R", "Shiny", "Posit Connect", "Snowflake"],
-    "links": {
-      "caseStudy": "/projects/opspulse-control-tower",
-      "github": "https://github.com/maxbarati/opspulse-control-tower"
-    },
-    "problem": "Operations leaders swivel-chairs between point solutions and gut feel to manage labor, quality, and throughput each shift.",
-    "goal": "Provide a single command center with predictive staffing alerts, drill-down dashboards, and automated shift recaps.",
-    "approach": "Modeled Snowflake fact tables, exposed R Markdown APIs for ML demand curves, and built modular Shiny components published through Posit Connect.",
-    "results": "Directors now review a single dashboard that pairs live status with predictive guidance, avoiding costly rush staffing.",
-    "metrics": [
-      {
-        "label": "Unplanned overtime",
-        "value": "-22%",
-        "description": "Cut through predictive staffing."
-      },
-      {
-        "label": "Incident response",
-        "value": "15 min",
-        "description": "Average time to acknowledge alerts."
-      },
-      {
-        "label": "Dashboard adoption",
-        "value": "9 sites",
-        "description": "Warehouses reviewing daily."
-      }
-    ],
-    "gallery": [
-      {
-        "src": "/projects/opspulse-kpi.svg",
-        "alt": "OpsPulse KPI drill-down with staffing overlays.",
-        "width": 1200,
-        "height": 720
-      },
-      {
-        "src": "/projects/opspulse-runtime.svg",
-        "alt": "Shiny runtime view showing alert feed and recommendations.",
         "width": 1200,
         "height": 720
       }

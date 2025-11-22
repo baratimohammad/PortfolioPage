@@ -92,7 +92,7 @@ export default function Home() {
           <div className="max-w-3xl space-y-6">
             <div className="space-y-4">
               <h1 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-                Engineering the Backbone of Data-Driven Decisions
+                ETL/ELT Development | Data Warehousing | Data Visualization
               </h1>
               <p className="text-lg leading-relaxed text-muted-foreground">
                 I design data systems that turn raw inputs into trusted insights—enabling teams to move fast, make confident decisions, and execute without hesitation.
@@ -126,13 +126,13 @@ export default function Home() {
         <div className="mx-auto w-full max-w-6xl space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              Services
+              {/* Tailored engagements to move from data to impact */}
             </p>
             <h2
               id="home-services-title"
               className="text-3xl font-semibold text-foreground sm:text-4xl"
             >
-              Tailored engagements to move from data to impact.
+              Services
             </h2>
             {/* <p className="text-base text-muted-foreground sm:text-lg">
               From modern ELT foundations to actionable analytics experiences,

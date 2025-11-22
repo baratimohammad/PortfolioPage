@@ -11,19 +11,92 @@ const timeline = [
     title: "Data Engineering Internship, Politecnico di Torino - Italy",
     details: [
       "Designed ETL pipelines to analyze and monitor the academic performance of DAUIN department’s PhD students at Politecnico di Torino.",
-      "Utilized Python for comprehensive data wrangling and transformation, ensuring high-quality, structured datasets ready for advanced analytics.",
+      "Utilized Python for comprehensive data wrangling and transformation, ensuring high-quality, structured datasets ready for downstream analytics.",
       "Automated the extraction of key employment data by scraping LinkedIn profiles from predefined URLs, leveraging agentic AI tools (Langchain, Ollama and Tavily).",
       "Built interactive dashboards using Grafana to visualize performance metrics.",
       "Containerized the entire data pipeline using Docker, ensuring portability, scalability, and ease of deployment across different environments.",
     ],
   },
   {
-    period: "May 2022 - October 2022",
+    period: "July 2022 - September 2022",
     title: "Quantitative Analyst Internship, MyDigiPay - Iran",
     details: [
       "Conducted SQL queries and performed descriptive and inferential statistics analysis on financial data for credit scoring.",
       "Collaborated with team members to develop machine learning models for classification and regression.",
     ],
+  },
+] as const;
+
+const certificates = [
+  {
+    title: "Apache Spark Essential Training: Big Data Engineering",
+    issuer: "LinkedIn Learning",
+    link: "https://www.linkedin.com/learning/certificates/ff9c95088392c1ae02680dac0584dabd95dc30a4f74b6319c04e4b044b268709",
+  },
+  {
+    title: "Introduction to LangGraph",
+    issuer: "LangChain Academy",
+    link: "https://academy.langchain.com/certificates/xlexe6td6s",
+  },
+  {
+    title: "Introduction to Spark SQL and DataFrames",
+    issuer: "LinkedIn Learning",
+    link: "https://www.linkedin.com/learning/certificates/12b796c182cdbe9dd82ba017176742fe6321ff56f7e36cfdf2219a2571992c2a",
+  },
+  {
+    title: "Data Engineering with dbt",
+    issuer: "LinkedIn Learning",
+    link: "https://www.linkedin.com/learning/certificates/5f44b08796ac9ac7538cd25fd54656676eb06a40abf3ee037616765f571d533e",
+  },
+  {
+    title: "Mathematics for Machine Learning: Multivariate Calculus",
+    issuer: "Imperial College London, Coursera",
+    link: "https://www.coursera.org/account/accomplishments/verify/URAUC98HSRPM",
+  },
+  {
+    title: "Mathematics for Machine Learning: Linear Algebra",
+    issuer: "Imperial College London, Coursera",
+    link: "https://www.coursera.org/account/accomplishments/verify/M3GGNGFS8PT4",
+  },
+  {
+    title: "Unsupervised Learning, Recommenders, Reinforcement Learning",
+    issuer: "DeepLearning.AI, Coursera",
+    link: "https://www.coursera.org/account/accomplishments/verify/APN7NZL7F2WM",
+  },
+  {
+    title: "Advanced Learning Algorithms",
+    issuer: "DeepLearning.AI, Coursera",
+    link: "https://www.coursera.org/account/accomplishments/verify/HLVAL8RCQCLG",
+  },
+  {
+    title: "Neural Networks and Deep Learning",
+    issuer: "DeepLearning.AI, Coursera",
+    link: "https://www.coursera.org/account/accomplishments/verify/FLHVBDEYRL75",
+  },
+  {
+    title: "Supervised Machine Learning: Regression and Classification",
+    issuer: "DeepLearning.AI, Coursera",
+    link: "https://www.coursera.org/account/accomplishments/verify/ZZBGEFGC99KP",
+  },
+  {
+    title: "Data Science Professional Certificate",
+    issuer: "IBM, Coursera",
+    link: "https://www.credly.com/badges/57cbc357-b944-4a18-b059-5a8bdbe0930b?source=linked_in_profile",
+  },
+  {
+    title: "Data Collection and Processing with Python",
+    issuer: "University of Michigan, Coursera",
+    link: "https://coursera.org/share/154223ea3dc8ae7f16ef23b760732fb3",
+  },
+  {
+    title: "Python Functions, Files, and Dictionaries",
+    issuer: "University of Michigan, Coursera",
+    link: "https://coursera.org/verify/2HQ8TCAZBGPH",
+  },
+  {
+    title: "Python Classes and Inheritance",
+    issuer: "University of Michigan, Coursera",
+    link: "https://coursera.org/verify/VCTUHRQYAPT3",
   },
 ] as const;
 
@@ -50,13 +123,6 @@ const principles = [
   },
 ] as const;
 
-const clients = [
-  { name: "Nimbus Labs" },
-  { name: "Northwind Ops" },
-  { name: "Volt Mobility" },
-  { name: "Harbor Analytics" },
-] as const;
-
 export const metadata: Metadata = {
   title: "About",
   description:
@@ -73,14 +139,28 @@ export default function AboutPage() {
               About
             </p>
             <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              I connect data plumbing to decisions teams trust.
+              I Engineer the Backbone of Data-Driven Decisions.
             </h1>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              I&apos;m Max Barati, a data engineer who moves between architecture,
-              analytics UX, and enablement to make sure insight flows the moment it is
-              needed. I have shipped pipelines, ML-powered workflows, and internal tools
-              for growth-stage startups through public companies across SaaS, climate,
-              and fintech.
+              I’m a junior data engineer with a Master’s degree in{" "}
+              <Link
+                href="https://www.polito.it/en/education/master-s-degree-programmes/digital-skills-for-sustainable-societal-transitions"
+                className="text-primary underline"
+              >
+                Digital Skills for Sustainable Societal Transitions
+              </Link>
+              , from Politecnico di Torino, Italy. I enjoy turning messy data into clean,
+              usable structures and building pipelines that make information actually
+              reachable. During my Master’s, I worked on projects that forced me to think
+              critically, take ownership, and deliver solutions under real constraints —
+              not just on paper.
+            </p>
+            <p className="text-lg leading-relaxed text-muted-foreground">
+              I’m comfortable diving into problems, breaking them down, and figuring out how
+              to move from idea to working implementation. I adapt quickly, work well in fast-moving
+              environments, and collaborate tightly with teams to keep projects on track. My goal is
+              simple: grow into a reliable engineer who builds data tools and workflows that have
+              real impact.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               {/*
@@ -155,6 +235,39 @@ export default function AboutPage() {
           </div>
 
           <div className="space-y-10">
+            <div className="rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
+              <header className="space-y-2">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  Certificates
+                </p>
+                <h2 className="text-3xl font-semibold text-foreground">
+                  Continued learning.
+                </h2>
+              </header>
+              <ul className="mt-6 space-y-4 text-sm font-medium text-muted-foreground">
+                {certificates.map((certificate) => (
+                  <li key={certificate.title} className="flex items-center gap-3">
+                    <span className="mt-1 text-primary">
+                      <ArrowUpRight className="h-4 w-4" aria-hidden />
+                    </span>
+                    <div className="flex-1 min-w-[220px]">
+                      <span className="text-base font-semibold text-foreground">
+                        {certificate.title}
+                      </span>
+                    </div>
+                    <Link
+                      href={certificate.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-primary underline text-right"
+                    >
+                      {certificate.issuer}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             <div className="rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
               <header className="space-y-2">
                 <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
@@ -235,6 +348,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </main>
+    </main >
   );
 }
