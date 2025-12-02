@@ -34,13 +34,16 @@ All runtime secrets live in `.env` (same directory as `docker-compose.yml`). Upd
 
 ```bash
 cat <<'EOF' > .env
-NEXT_PUBLIC_SITE_URL=https://example.com
+NEXT_PUBLIC_SITE_URL=https://barati.tech
 SMTP_HOST=smtp.your-provider.com
 SMTP_PORT=587
 SMTP_USER=apikey-or-username
 SMTP_PASS=super-secret-password
 SMTP_FROM="Max Portfolio <hello@example.com>"
 SMTP_TO=hello@example.com
+# Optional Grafana admin bootstrap
+GRAFANA_ADMIN_USER=admin
+GRAFANA_ADMIN_PASSWORD=super-secret
 EOF
 ```
 
@@ -53,7 +56,10 @@ docker compose pull      # optional, grabs newer base images
 docker compose up -d --build
 ```
 
-The `web` service listens internally on port 3000; nginx exposes ports 80/443.
+Services:
+- `web`: Next.js app on internal port 3000
+- `grafana`: Grafana on internal port 3000
+- `nginx`: reverse-proxy entrypoint on host ports 80/443
 
 ## 5. Open the Firewall
 
@@ -71,7 +77,7 @@ The repo includes `scripts/certbot-once.sh`, which runs certbot in a disposable 
 
 ```bash
 cd /opt/max-portfolio
-./scripts/certbot-once.sh you@example.com example.com www.example.com
+./scripts/certbot-once.sh you@example.com barati.tech www.barati.tech grafana.barati.tech
 # Use CERTBOT_STAGING=1 ./scripts/certbot-once.sh ... while testing to avoid rate limits
 ```
 

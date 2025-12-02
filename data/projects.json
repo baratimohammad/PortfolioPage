@@ -1,24 +1,26 @@
 [
   {
-    "slug": "streampulse-insights",
-    "title": "StreamPulse Insights",
-    "summary": "Real-time telemetry transformed into interactive operations dashboards with proactive alerting for on-call teams.",
-    "heroImage": "/projects/streampulse-insights.svg",
-    "role": "Lead Data Engineer",
+    "slug": "AustinTrips",
+    "title": "Austin Trips",
+    "summary": "This project implements an ETL pipeline to process historical bike sharing data from Austin (2013–present). The goal is to enable stakeholders to make informed decisions on bike usage patterns, station performance, demand distribution, and vehicle/subscription trends. The pipeline extracts raw trip data, transforms it to calculate useful metrics (e.g., trips per kiosk, trips per hour, top stations, subscription and bike type analysis), and loads the results into a format suitable for visualization and analysis.",
+    "heroImage": "../images/AustinTripsETLHighLevelArchitecture.png",
+    "role": "Personal Project",
     "tags": [
-      "data viz",
-      "web"
+      "etl/elt",
+      "data viz"
     ],
-    "year": 2024,
+    "year": 2025,
     "stack": [
-      "TypeScript",
-      "Next.js",
-      "Kafka",
-      "dbt"
+      "Python",
+      "Spark",
+      "PostgreSQL",
+      "Grafana",
+      "Docker",
+      "ubuntu"
     ],
     "links": {
-      "caseStudy": "/projects/streampulse-insights",
-      "github": "https://github.com/maxbarati/streampulse-insights"
+      "caseStudy": "/projects/AustinTrips",
+      "github": "https://github.com/baratimohammad/AustinTrips"
     },
     "problem": "Operations teams were missing critical anomalies in a sea of logs, leading to costly downtime and pager fatigue.",
     "goal": "Deliver a streaming observability experience with clear alerting so responders see what matters within seconds.",

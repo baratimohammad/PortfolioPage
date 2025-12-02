@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { ContactForm } from "./contact-form";
 import { Github, Linkedin, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+
+import { ContactForm } from "./contact-form";
 
 type Highlight = {
   icon: LucideIcon;
   title: string;
   description: string;
-  href?: string;
+  href: string;
 };
 
 const highlights: Highlight[] = [
@@ -26,15 +27,14 @@ const highlights: Highlight[] = [
   {
     icon: Github,
     title: "GitHub",
-    description: "github.com/baratimohammad",
-    href: "https://github.com/baratimohammad",
+    description: "github.com/maxbarati",
+    href: "https://github.com/maxbarati",
   },
 ];
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description:
-    "Reach out to Me...",
+  title: "Contact | Max Barati",
+  description: "Reach out for data engineering, analytics, or product work.",
 };
 
 export default function ContactPage() {
@@ -43,19 +43,19 @@ export default function ContactPage() {
       <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="space-y-6 text-center sm:text-left">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-            {/* Contact */}
+            Contact
           </p>
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
             Reach out to me...
           </h1>
           <p className="text-lg leading-relaxed text-muted-foreground">
-            {/* Send a few lines about the problem, stakeholders, and timelines. I reply to
-            every serious inquiry with a short plan and next steps. */}
+            Send a few lines about the problem, stakeholders, and timelines. I reply to every
+            serious inquiry with a short plan and next steps.
           </p>
         </div>
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {highlights.map(({ icon: Icon, title, description, href }) => {
-            const isExternal = href?.startsWith("http");
+            const isExternal = href.startsWith("http");
             return (
               <div
                 key={title}
@@ -69,18 +69,14 @@ export default function ContactPage() {
                     {title}
                   </p>
                 </div>
-                {href ? (
-                  <a
-                    href={href}
-                    target={isExternal ? "_blank" : undefined}
-                    rel={isExternal ? "noreferrer" : undefined}
-                    className="mt-4 inline-flex items-center text-base font-medium text-primary transition hover:underline"
-                  >
-                    {description}
-                  </a>
-                ) : (
-                  <p className="mt-4 text-base text-foreground">{description}</p>
-                )}
+                <a
+                  href={href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noreferrer" : undefined}
+                  className="mt-4 inline-flex items-center text-base font-medium text-primary transition hover:underline"
+                >
+                  {description}
+                </a>
               </div>
             );
           })}
@@ -92,8 +88,7 @@ export default function ContactPage() {
           <header className="space-y-2">
             <h2 className="text-3xl font-semibold text-foreground">Or, write to me here...</h2>
             <p className="text-base text-muted-foreground">
-              {/* Drop enough detail so I can respond with a relevant point of view and
-              timeline. */}
+              Drop enough detail so I can respond with a relevant point of view and timeline.
             </p>
           </header>
           <div className="mt-8">

@@ -6,6 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { Project } from "@/types/project";
 
 const TAG_FILTERS = ["ETL/ELT", "Data Viz", "IoT"] as const;
+const normalizeTag = (tag: string) => tag.toLowerCase();
 
 export function PortfolioGrid({ projects }: { projects: Project[] }) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
@@ -19,12 +20,17 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
   const filteredProjects = useMemo(() => {
     if (!activeTag) return normalizedProjects;
     return normalizedProjects.filter((project) =>
-      project.tags.map((tag) => tag.toLowerCase()).includes(activeTag),
+      project.tags.map((tag) => normalizeTag(tag)).includes(activeTag),
     );
   }, [activeTag, normalizedProjects]);
 
   const handleFilterClick = (tag: string | null) => () => {
-    setActiveTag((prev) => (prev === tag ? null : tag));
+    if (!tag) {
+      setActiveTag(null);
+      return;
+    }
+    const normalized = normalizeTag(tag);
+    setActiveTag((prev) => (prev === normalized ? null : normalized));
   };
 
   const openPreview = (project: Project) => {
@@ -76,7 +82,8 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
           All
         </button>
         {TAG_FILTERS.map((tag) => {
-          const isActive = activeTag === tag;
+          const normalizedTag = normalizeTag(tag);
+          const isActive = activeTag === normalizedTag;
           return (
             <button
               key={tag}
