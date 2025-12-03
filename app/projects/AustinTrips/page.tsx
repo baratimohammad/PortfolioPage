@@ -13,8 +13,18 @@ const heroImageWidth = 2366;
 const heroImageHeight = 1616;
 
 const sourceDatasets = [
-  { title: "Bike Trips Data", description: "Austin MetroBike Trips" },
-  { title: "Kiosk Locations", description: "Austin MetroBike Kiosk Locations" },
+  {
+    title: "Bike Trips Data",
+    description: "Austin MetroBike Trips",
+    href:
+      "https://data.austintexas.gov/api/views/tyfh-5r8s/rows.csv?fourfour=tyfh-5r8s&cacheBust=1744129742&date=20250926&accessType=DOWNLOAD",
+  },
+  {
+    title: "Kiosk Locations",
+    description: "Austin MetroBike Kiosk Locations",
+    href:
+      "https://data.austintexas.gov/api/views/qd73-bsdg/rows.csv?fourfour=qd73-bsdg&cacheBust=1745520602&date=20250926&accessType=DOWNLOAD",
+  },
 ];
 
 const stakeholderRequirements = [
@@ -29,10 +39,18 @@ const warehouseDesign = [
   {
     title: "Schematic design",
     body: "Conceptual design covering fact and dimension entities aligned to trip events, kiosks, vehicles, and subscriptions.",
+    imageSrc: "/images/AustinTripsCoceptualDesign.jpg",
+    imageAlt: "Austin Trips conceptual schema diagram",
+    imageWidth: 1282,
+    imageHeight: 760,
   },
   {
     title: "Logical design",
     body: "Logical schema drawn in DBDiagram to guide implementation and enforce relational integrity.",
+    imageSrc: "/images/AustinTripsLogicalDesign.jpg",
+    imageAlt: "Austin Trips logical schema diagram",
+    imageWidth: 1784,
+    imageHeight: 1182,
   },
 ];
 
@@ -60,12 +78,12 @@ const pipelinePhases = [
   },
 ];
 
-const storyBlocks = [
-  { label: "Problem", copy: project.problem },
-  { label: "Goal", copy: project.goal },
-  { label: "Approach", copy: project.approach },
-  { label: "Results", copy: project.results },
-];
+// const storyBlocks = [
+//   { label: "Problem", copy: project.problem },
+//   { label: "Goal", copy: project.goal },
+//   { label: "Approach", copy: project.approach },
+//   { label: "Results", copy: project.results },
+// ];
 
 const dashboards = [
   {
@@ -124,6 +142,47 @@ export default function AustinTripsCaseStudyExclusive() {
   return (
     <main className="flex flex-col gap-16 py-24">
       <div className="mx-auto w-full max-w-6xl space-y-12 px-4 sm:px-6 lg:px-8">
+        <section className="space-y-6">
+          <header className="space-y-2">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+              Dashboards
+            </p>
+            <h2 className="text-3xl font-semibold text-foreground">
+              Embedded visibility for on-call teams
+            </h2>
+          </header>
+          <div className="grid gap-6">
+            {dashboards.map((dashboard) => (
+              <article
+                key={dashboard.title}
+                className="space-y-4 rounded-3xl border border-border/60 bg-background/70 p-4 shadow-subtle"
+              >
+                <div className="overflow-hidden rounded-2xl border border-border/50 bg-muted/20">
+                  <iframe
+                    src={dashboard.embedUrl}
+                    title={`${dashboard.title} Grafana embed`}
+                    className="w-full"
+                    style={{ height: "clamp(700px, calc(75vh + 200px), 1300px)" }}
+                    loading="lazy"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  <Link
+                    href={dashboard.embedUrl}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-1 rounded-full border border-border/70 px-3 py-1 text-xs font-semibold text-foreground transition hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
+                  >
+                    Open in Grafana
+                    <ArrowUpRight className="h-3 w-3" aria-hidden />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="space-y-6 rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
           <header className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
@@ -147,7 +206,16 @@ export default function AustinTripsCaseStudyExclusive() {
                   key={dataset.title}
                   className="rounded-2xl border border-border/60 bg-muted/30 p-4 text-foreground"
                 >
-                  <p className="text-sm font-semibold">{dataset.title}</p>
+                  <p className="text-sm font-semibold">
+                    <Link
+                      href={dataset.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="underline decoration-primary/60 decoration-2 underline-offset-4 hover:text-primary"
+                    >
+                      {dataset.title}
+                    </Link>
+                  </p>
                   <p className="text-sm text-muted-foreground">{dataset.description}</p>
                 </li>
               ))}
@@ -185,18 +253,28 @@ export default function AustinTripsCaseStudyExclusive() {
             {warehouseDesign.map((item) => (
               <article
                 key={item.title}
-                className="space-y-2 rounded-2xl border border-border/60 bg-muted/30 p-5"
+                className="space-y-3 rounded-2xl border border-border/60 bg-muted/30 p-5"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-muted-foreground">
                   {item.title}
                 </p>
+                <div className="overflow-hidden rounded-xl border border-border/50 bg-background/60">
+                  <Image
+                    src={item.imageSrc}
+                    alt={item.imageAlt}
+                    width={item.imageWidth}
+                    height={item.imageHeight}
+                    className="h-auto w-full object-contain"
+                    sizes="(min-width: 1024px) 520px, (min-width: 640px) 50vw, 100vw"
+                  />
+                </div>
                 <p className="text-sm leading-relaxed text-foreground">{item.body}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="space-y-6 rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
+        {/* <section className="space-y-6 rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
           <header className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
               Storyboard
@@ -215,70 +293,20 @@ export default function AustinTripsCaseStudyExclusive() {
               </article>
             ))}
           </div>
-        </section>
-
-        <section className="space-y-6">
-          <header className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-              Dashboards
-            </p>
-            <h2 className="text-3xl font-semibold text-foreground">
-              Embedded visibility for on-call teams
-            </h2>
-          </header>
-          <div className="grid gap-6">
-            {dashboards.map((dashboard) => (
-              <article
-                key={dashboard.title}
-                className="space-y-4 rounded-3xl border border-border/60 bg-background/70 p-4 shadow-subtle"
-              >
-                <div className="overflow-hidden rounded-2xl border border-border/50 bg-muted/20">
-                  <iframe
-                    src={dashboard.embedUrl}
-                    title={`${dashboard.title} Grafana embed`}
-                    className="w-full"
-                    style={{ height: "clamp(500px, 75vh, 1100px)" }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
-                </div>
-                <div className="space-y-1">
-                  <h3 className="text-lg font-semibold text-foreground">{dashboard.title}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {dashboard.description}
-                  </p>
-                  <p className="text-xs font-semibold uppercase tracking-[0.4em] text-muted-foreground">
-                    {dashboard.caption}
-                  </p>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    <Link
-                      href={dashboard.embedUrl}
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="inline-flex items-center gap-1 rounded-full border border-border/70 px-3 py-1 text-xs font-semibold text-foreground transition hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
-                    >
-                      Open in Grafana
-                      <ArrowUpRight className="h-3 w-3" aria-hidden />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        </section> */}
 
         <section className="space-y-6 rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
           <header className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
               Project architecture
             </p>
-            <h2 className="text-3xl font-semibold text-foreground">How the pieces run in production</h2>
+            <h2 className="text-3xl font-semibold text-foreground">What happened under the hood</h2>
           </header>
           <div className="space-y-4 text-sm leading-relaxed text-muted-foreground">
             <p>
               Below is a high-level architecture of the ETL pipeline. It highlights the operational flow from raw data pull to dashboards teams use every day.
             </p>
-              <div className="overflow-hidden rounded-2xl border border-border/60 bg-muted/30 p-2">
+            <div className="overflow-hidden rounded-2xl border border-border/60 bg-muted/30 p-2">
               <div className="overflow-hidden rounded-xl border border-border/50 bg-background/60">
                 <Image
                   src={heroImage}
