@@ -7,17 +7,20 @@ import { getProjectBySlug, projectSlugs } from "@/lib/projects";
 export const revalidate = 3600;
 
 type ProjectPageParams = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export function generateStaticParams() {
   return projectSlugs.map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: ProjectPageParams): Metadata {
-  const project = getProjectBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: ProjectPageParams): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     return {
@@ -54,8 +57,9 @@ export function generateMetadata({ params }: ProjectPageParams): Metadata {
   };
 }
 
-export default function ProjectCaseStudy({ params }: ProjectPageParams) {
-  const project = getProjectBySlug(params.slug);
+export default async function ProjectCaseStudy({ params }: ProjectPageParams) {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
 
   if (!project) {
     notFound();

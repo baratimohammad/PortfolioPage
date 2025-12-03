@@ -16,13 +16,22 @@ CERTBOT_WWW_DIR="${PROJECT_ROOT}/docker/certbot/www"
 
 mkdir -p "$CERTBOT_CONF_DIR" "$CERTBOT_WWW_DIR"
 
+# Ensure nginx is up to serve HTTP-01 challenges
+docker compose up -d nginx
+
 DOMAIN_FLAGS=()
 for domain in "${DOMAINS[@]}"; do
   DOMAIN_FLAGS+=("-d" "$domain")
 done
 
+CERTBOT_FLAGS=(
+  --non-interactive
+  --keep-until-expiring
+  --expand
+)
+
 if [[ ${CERTBOT_STAGING:-0} -eq 1 ]]; then
-  DOMAIN_FLAGS+=("--staging")
+  CERTBOT_FLAGS+=("--staging")
 fi
 
 docker run --rm \
@@ -34,6 +43,7 @@ docker run --rm \
   --email "$EMAIL" \
   --agree-tos \
   --no-eff-email \
+  "${CERTBOT_FLAGS[@]}" \
   "${DOMAIN_FLAGS[@]}"
 
 echo "Certificate request complete. Reloading nginx to pick up new files..."

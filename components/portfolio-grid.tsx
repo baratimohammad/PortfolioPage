@@ -192,7 +192,7 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
 
       {previewProject ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4 py-10"
+          className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 px-4 py-10"
           role="dialog"
           aria-modal="true"
           aria-labelledby="project-preview-title"
@@ -226,15 +226,17 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
                   Close
                 </button>
               </div>
-              <div className="rounded-2xl border border-border/60 bg-muted/30">
-                <Image
-                  src={previewProject.heroImage}
-                  alt={`${previewProject.title} preview`}
-                  width={1024}
-                  height={600}
-                  className="h-[320px] w-full rounded-2xl object-cover"
-                  sizes="(min-width: 1024px) 66vw, 100vw"
-                />
+              <div className="rounded-2xl border border-border/60 bg-muted/30 p-3">
+                <div className="overflow-hidden rounded-xl bg-background/80">
+                  <Image
+                    src={previewProject.heroImage}
+                    alt={`${previewProject.title} preview`}
+                    width={1024}
+                    height={600}
+                    className="h-auto w-full max-h-[70vh] rounded-xl object-contain"
+                    sizes="(min-width: 1024px) 66vw, 100vw"
+                  />
+                </div>
               </div>
               <p
                 id="project-preview-description"
