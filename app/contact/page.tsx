@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Github, Linkedin, Mail } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
-import { ContactForm } from "./contact-form";
+// import { ContactForm } from "./contact-form";
 
 type Highlight = {
   icon: LucideIcon;
@@ -27,8 +27,8 @@ const highlights: Highlight[] = [
   {
     icon: Github,
     title: "GitHub",
-    description: "github.com/maxbarati",
-    href: "https://github.com/maxbarati",
+    description: "github.com/baratimohammad",
+    href: "https://github.com/baratimohammad",
   },
 ];
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+      {/* <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle backdrop-blur sm:p-10">
           <header className="space-y-2">
             <h2 className="text-3xl font-semibold text-foreground">Or, write to me here...</h2>
@@ -95,7 +95,7 @@ export default function ContactPage() {
             <ContactForm />
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

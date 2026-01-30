@@ -122,17 +122,17 @@ export default function Home() {
         reduceMotion={shouldReduceMotion}
       /> */}
 
-      <section className="bg-background" aria-labelledby="home-services-title">
+      <section className="bg-background" aria-labelledby="home-stacks-title">
         <div className="mx-auto w-full max-w-6xl space-y-8 px-4 sm:px-6 lg:px-8">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               {/* Tailored engagements to move from data to impact */}
             </p>
             <h2
-              id="home-services-title"
+              id="home-stacks-title"
               className="text-3xl font-semibold text-foreground sm:text-4xl"
             >
-              Services
+              Stacks
             </h2>
             {/* <p className="text-base text-muted-foreground sm:text-lg">
               From modern ELT foundations to actionable analytics experiences,

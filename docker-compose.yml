@@ -11,6 +11,11 @@ services:
       - "3000"
     ports:
       - "3000:3000"
+    # Contain runaway processes without starving normal traffic.
+    cpus: "2.0"
+    mem_limit: "3g"
+    tmpfs:
+      - /tmp:rw,noexec,nosuid
     restart: unless-stopped
 
   nginx:

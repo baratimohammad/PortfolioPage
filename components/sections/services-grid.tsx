@@ -4,13 +4,13 @@ import { Check, Cog } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { StaticImageData } from "next/image";
 
-import CloudPlatformsImage from "@/images/services/CloudPlatforms.jpg";
 import ConnectedSystemsImage from "@/images/services/ConnectedSystems.jpg";
 import DataAnalysisImage from "@/images/services/DataAnalysis.png";
-import DataOrchestrationImage from "@/images/services/DataOrchestration2.jpg";
 import DatabaseSystemsImage from "@/images/services/DatabaseSystems.jpg";
 import GeoSpatialImage from "@/images/services/GeoSpatial.jpg";
 import ProgrammingImage from "@/images/services/Programming.jpg";
+import CloudPlatformsImage from "@/images/services/CloudPlatforms.jpg";
+import DataOrchestrationImage from "@/images/services/DataOrchestration2.jpg";
 
 type Service = {
   title: string;
@@ -22,17 +22,46 @@ type Service = {
 
 export const services: readonly Service[] = [
   {
+    title: "Programming & Development",
+    icon: Cog,
+    keywords: [
+      "Python",
+      "Docker",
+      // "OOP",
+    ],
+    image: ProgrammingImage,
+  },
+  {
+    title: "Warehousing and Visualization",
+    icon: Cog,
+    keywords: [
+      "dbt",
+      "Grafana",
+    ],
+    image: DataAnalysisImage,
+  },
+  {
     title: "Cloud Platforms",
     icon: Cog,
     keywords: [
       "AWS S3",
       "AWS Glue",
-      "AWS Redshift",
-      "AWS EMR",
-      // "Azure Data Factory",
-      "Databricks",
+      // "AWS Redshift",
+      // "AWS EMR",
+      // // "Azure Data Factory",
+      // "Databricks",
     ],
     image: CloudPlatformsImage,
+  },
+  {
+    title: "Database Systems",
+    icon: Cog,
+    keywords: [
+      // "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+    ],
+    image: DatabaseSystemsImage,
   },
   {
     title: "Big Data & Orchestration",
@@ -48,37 +77,6 @@ export const services: readonly Service[] = [
     //   "Observability and alerting baked into every stage",
     // ],
     // ],
-  },
-  {
-    title: "Database Systems",
-    icon: Cog,
-    keywords: [
-      "MySQL",
-      "PostgreSQL",
-      "MongoDB",
-    ],
-    image: DatabaseSystemsImage,
-  },
-  {
-    title: "Data Visualization",
-    icon: Cog,
-    keywords: [
-      "Grafana",
-      "Power BI",
-      "Matplotlib",
-      "Seaborn",
-    ],
-    image: DataAnalysisImage,
-  },
-  {
-    title: "Programming & Development",
-    icon: Cog,
-    keywords: [
-      "Python",
-      "OOP",
-      "Docker",
-    ],
-    image: ProgrammingImage,
   },
   {
     title: "Connected Systems",
@@ -135,7 +133,7 @@ export const services: readonly Service[] = [
 
 export function ServicesGrid() {
   return (
-    <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {services.map(({ title, icon: Icon, keywords, outcomes, image }) => {
         const hasImage = Boolean(image);
         const visualWrapperClasses = hasImage

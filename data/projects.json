@@ -1,5 +1,64 @@
 [
   {
+    "slug": "PhDStudenti",
+    "title": "PhD Studenti ETL & Dashboards",
+    "summary": "A fully containerized stack that ingests, transforms, enriches, and visualizes academic data to support data-driven monitoring of PhD student careers at Politecnico di Torino (DAUIN).",
+    "heroImage": "/PhDStudentiOverallArchitecture.jpg",
+    "role": "Master's Thesis Project",
+    "tags": [
+      "etl/elt",
+      "data viz"
+    ],
+    "year": 2026,
+    "stack": [
+      "Python",
+      "dbt",
+      "Grafana",
+      "Docker",
+      "PostgreSQL",
+      "Ollama"
+    ],
+    "links": {
+      "caseStudy": "/projects/PhDStudenti",
+      "github": "https://github.com/baratimohammad/2026-DSThesis"
+    },
+    "problem": "The department lacked a structured, repeatable way to analyze PhD student careers across cycles, sources, and mobility programs.",
+    "goal": "Enable transparent, AI-assisted enrichment and dashboarding so stakeholders can monitor activities, publications, and mobility over time.",
+    "approach": "Containerized ingestion of CSV and PDF sources, AI-assisted extraction with Ollama, dbt-modeled warehouse and marts, and Grafana dashboards filtered by cycle, year, course, and mobility duration.",
+    "results": "Department teams can run annual refreshes with curated files and instantly explore normalized data through Grafana dashboards.",
+    "metrics": [
+      {
+        "label": "Sources",
+        "value": "CSV + PDF",
+        "description": "Structured files plus AI-enriched unstructured PDFs."
+      },
+      {
+        "label": "Execution",
+        "value": "Containerized",
+        "description": "All pipelines run in Docker for reproducible annual cycles."
+      },
+      {
+        "label": "Dashboards",
+        "value": "Grafana",
+        "description": "Mobility, course, and activity views with cycle filters."
+      }
+    ],
+    "gallery": [
+      {
+        "src": "/sample_ore_formazione.png",
+        "alt": "Dashboard showing formation hours across PhD cycles and years.",
+        "width": 2866,
+        "height": 1520
+      },
+      {
+        "src": "/sample_mobilita_internazionale.png",
+        "alt": "Dashboard summarizing international mobility duration and participation.",
+        "width": 2866,
+        "height": 1498
+      }
+    ]
+  },
+  {
     "slug": "AustinTrips",
     "title": "Austin Trips",
     "summary": "This project implements an ETL pipeline to process historical bike sharing data from Austin (2013–present). The goal is to enable stakeholders to make informed decisions on bike usage patterns, station performance, demand distribution, and vehicle/subscription trends. The pipeline extracts raw trip data, transforms it to calculate useful metrics (e.g., trips per kiosk, trips per hour, top stations, subscription and bike type analysis), and loads the results into a format suitable for visualization and analysis.",
@@ -59,117 +118,47 @@
     ]
   },
   {
-    "slug": "forecast-studio",
-    "title": "Forecast Studio",
-    "summary": "Scenario planning workbench that helps finance and product teams test assumptions with explainable ML forecasts.",
-    "heroImage": "/projects/forecast-studio.svg",
-    "role": "Data Science Lead",
+    "slug": "GlucoIoTBot",
+    "title": "Insulin Monitoring & Actuation",
+    "summary": "An IoT microservice stack that publishes near-real-time glucose readings via MQTT, persists them in InfluxDB, and lets users review stats and trigger insulin actions through a Telegram bot.",
+    "heroImage": "/GlucoOverallArchitecture.png",
+    "role": "Class Project",
     "tags": [
-      "machine learning",
-      "web"
+      "IoT"
     ],
-    "year": 2023,
+    "year": 2024,
     "stack": [
-      "Next.js",
-      "DuckDB",
       "Python",
-      "PyTorch"
+      "paho-mqtt",
+      "CherryPy",
+      "InfluxDB",
+      "Telepot"
     ],
     "links": {
-      "caseStudy": "/projects/forecast-studio",
-      "github": "https://github.com/maxbarati/forecast-studio"
+      "caseStudy": "/projects/GlucoIoTBot",
+      "github": "https://github.com/baratimohammad/Gluco"
     },
-    "problem": "Planning teams relied on brittle spreadsheets that broke under new scenarios and provided no traceability back to source data.",
-    "goal": "Launch an explainable forecasting application that lets teams iterate on assumptions and share updates with confidence.",
-    "approach": "Built a modular feature store, automated backtesting harness, and an interactive React front-end that visualises forecast uncertainty with human-readable insights.",
-    "results": "Stakeholders can now simulate product launches and budget shifts in minutes while keeping an auditable trail of every change.",
+    "problem": "Manual glucose tracking and insulin logging lacked timeliness and remote visibility for caregivers.",
+    "goal": "Deliver a containerized, publish–subscribe pipeline that captures glucose readings in near real time and enables controlled insulin actions through a chat interface.",
+    "approach": "Implemented OOP Python sensor and actuator services publishing to MQTT, subscriber writes to InfluxDB, Telegram bot exposes history and commands, and a catalogue service registers clients/services in a microservice topology.",
+    "results": "Achieved near-real-time persistence of glucose metrics, remote retrieval of trends via chat, and safe insulin actuation endpoints exposed over HTTP.",
     "metrics": [
       {
-        "label": "Scenario turnaround",
-        "value": "8x faster",
-        "description": "Speed to produce new forecast scenarios."
+        "label": "Ingestion pattern",
+        "value": "Publish–Subscribe",
+        "description": "Sensor publishers with MQTT; subscriber persists to InfluxDB."
       },
       {
-        "label": "Adoption",
-        "value": "180+ users",
-        "description": "Monthly active analysts and PMs."
+        "label": "Interfaces",
+        "value": "MQTT + Telegram",
+        "description": "Chatbot for history/commands; M2M for telemetry and control."
       },
       {
-        "label": "Confidence score",
-        "value": "+24 pts",
-        "description": "Increase in stakeholder trust surveys."
+        "label": "Architecture",
+        "value": "Microservices",
+        "description": "Catalogue + sensor + actuator + subscriber services for scalability."
       }
     ],
-    "gallery": [
-      {
-        "src": "/projects/forecast-studio-overview.svg",
-        "alt": "Forecast Studio overview charts with uncertainty bands.",
-        "width": 1200,
-        "height": 720
-      },
-      {
-        "src": "/projects/forecast-studio-scenarios.svg",
-        "alt": "Scenario comparison showing baseline vs. launch projections.",
-        "width": 1200,
-        "height": 720
-      }
-    ]
-  },
-  {
-    "slug": "unified-metrics-hub",
-    "title": "Unified Metrics Hub",
-    "summary": "Centralised metrics platform standardising KPIs and refreshing executive scorecards in minutes instead of hours.",
-    "heroImage": "/projects/unified-metrics-hub.svg",
-    "role": "Analytics Engineering Lead",
-    "tags": [
-      "data viz",
-      "machine learning"
-    ],
-    "year": 2022,
-    "stack": [
-      "Snowflake",
-      "PostgreSQL",
-      "Dagster",
-      "React"
-    ],
-    "links": {
-      "caseStudy": "/projects/unified-metrics-hub",
-      "github": "https://github.com/maxbarati/unified-metrics-hub"
-    },
-    "problem": "Executives were making decisions from conflicting KPI decks generated by hand with stale extracts.",
-    "goal": "Provide a governed metrics hub that syncs definitions across teams and automates board-ready scorecards.",
-    "approach": "Modeled shared dimensions in Snowflake, orchestrated Dagster assets for incremental freshness, and shipped a React experience with row-level security.",
-    "results": "Leadership now reviews the same trusted KPIs, refreshed nightly, with drill-ins for operational owners.",
-    "metrics": [
-      {
-        "label": "Report prep time",
-        "value": "-60%",
-        "description": "Reduction in analyst effort per cycle."
-      },
-      {
-        "label": "Metric adoption",
-        "value": "25 teams",
-        "description": "Cross-functional groups using the hub."
-      },
-      {
-        "label": "Freshness SLA",
-        "value": "95%",
-        "description": "Dashboards refreshed before 8am daily."
-      }
-    ],
-    "gallery": [
-      {
-        "src": "/projects/unified-metrics-hub-scorecard.svg",
-        "alt": "Unified scorecard view with executive KPIs and trends.",
-        "width": 1200,
-        "height": 720
-      },
-      {
-        "src": "/projects/unified-metrics-hub-lineage.svg",
-        "alt": "Data lineage explorer showing Dagster asset dependencies.",
-        "width": 1200,
-        "height": 720
-      }
-    ]
+    "gallery": []
   }
 ]

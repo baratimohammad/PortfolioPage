@@ -29,74 +29,40 @@ const timeline = [
 
 const certificates = [
   {
+    title: "DeepLearning.AI Data Engineering Specialization",
+    issuer: "DeepLearning.AI",
+    link: "https://coursera.org/share/6fbd06ee0463233473fdd2a9e68c87d6",
+    image: "/certificates/DeepLearning_DataEng.png",
+  },
+  {
     title: "Apache Spark Essential Training: Big Data Engineering",
     issuer: "LinkedIn Learning",
     link: "https://www.linkedin.com/learning/certificates/ff9c95088392c1ae02680dac0584dabd95dc30a4f74b6319c04e4b044b268709",
-  },
-  {
-    title: "Introduction to LangGraph",
-    issuer: "LangChain Academy",
-    link: "https://academy.langchain.com/certificates/xlexe6td6s",
+    image: "/certificates/Linkedin_ApacheSpark.png",
   },
   {
     title: "Introduction to Spark SQL and DataFrames",
     issuer: "LinkedIn Learning",
     link: "https://www.linkedin.com/learning/certificates/12b796c182cdbe9dd82ba017176742fe6321ff56f7e36cfdf2219a2571992c2a",
+    image: "/certificates/Linkedin_sparkSQL.png",
   },
   {
     title: "Data Engineering with dbt",
     issuer: "LinkedIn Learning",
     link: "https://www.linkedin.com/learning/certificates/5f44b08796ac9ac7538cd25fd54656676eb06a40abf3ee037616765f571d533e",
+    image: "/certificates/Linkedin_dbt.png",
   },
   {
-    title: "Mathematics for Machine Learning: Multivariate Calculus",
-    issuer: "Imperial College London, Coursera",
-    link: "https://www.coursera.org/account/accomplishments/verify/URAUC98HSRPM",
+    title: "Machine Learning Specialization",
+    issuer: "DeepLearning.AI",
+    link: "https://www.coursera.org/account/accomplishments/specialization/NK3YF9QR7HNE",
+    image: "/certificates/DeepLearning_MachineLearning.png",
   },
   {
-    title: "Mathematics for Machine Learning: Linear Algebra",
-    issuer: "Imperial College London, Coursera",
-    link: "https://www.coursera.org/account/accomplishments/verify/M3GGNGFS8PT4",
-  },
-  {
-    title: "Unsupervised Learning, Recommenders, Reinforcement Learning",
-    issuer: "DeepLearning.AI, Coursera",
-    link: "https://www.coursera.org/account/accomplishments/verify/APN7NZL7F2WM",
-  },
-  {
-    title: "Advanced Learning Algorithms",
-    issuer: "DeepLearning.AI, Coursera",
-    link: "https://www.coursera.org/account/accomplishments/verify/HLVAL8RCQCLG",
-  },
-  {
-    title: "Neural Networks and Deep Learning",
-    issuer: "DeepLearning.AI, Coursera",
-    link: "https://www.coursera.org/account/accomplishments/verify/FLHVBDEYRL75",
-  },
-  {
-    title: "Supervised Machine Learning: Regression and Classification",
-    issuer: "DeepLearning.AI, Coursera",
-    link: "https://www.coursera.org/account/accomplishments/verify/ZZBGEFGC99KP",
-  },
-  {
-    title: "Data Science Professional Certificate",
-    issuer: "IBM, Coursera",
-    link: "https://www.credly.com/badges/57cbc357-b944-4a18-b059-5a8bdbe0930b?source=linked_in_profile",
-  },
-  {
-    title: "Data Collection and Processing with Python",
-    issuer: "University of Michigan, Coursera",
-    link: "https://coursera.org/share/154223ea3dc8ae7f16ef23b760732fb3",
-  },
-  {
-    title: "Python Functions, Files, and Dictionaries",
-    issuer: "University of Michigan, Coursera",
-    link: "https://coursera.org/verify/2HQ8TCAZBGPH",
-  },
-  {
-    title: "Python Classes and Inheritance",
-    issuer: "University of Michigan, Coursera",
-    link: "https://coursera.org/verify/VCTUHRQYAPT3",
+    title: "IBM Data Science Specialization",
+    issuer: "IBM / Coursera",
+    link: "https://www.coursera.org/account/accomplishments/professional-cert/JZXLZVE5BCF8",
+    image: "/certificates/IBM_DataScience.png",
   },
 ] as const;
 
@@ -142,7 +108,7 @@ export default function AboutPage() {
               I Engineer the Backbone of Data-Driven Decisions.
             </h1>
             <p className="text-lg leading-relaxed text-muted-foreground">
-              I’m a junior data engineer with a Master’s degree in{" "}
+              I’m a data engineer with a Master’s degree in{" "}
               <Link
                 href="https://www.polito.it/en/education/master-s-degree-programmes/digital-skills-for-sustainable-societal-transitions"
                 className="text-primary underline"
@@ -244,28 +210,42 @@ export default function AboutPage() {
                   Continued learning.
                 </h2>
               </header>
-              <ul className="mt-6 space-y-4 text-sm font-medium text-muted-foreground">
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {certificates.map((certificate) => (
-                  <li key={certificate.title} className="flex items-center gap-3">
-                    <span className="mt-1 text-primary">
-                      <ArrowUpRight className="h-4 w-4" aria-hidden />
-                    </span>
-                    <div className="flex-1 min-w-[220px]">
-                      <span className="text-base font-semibold text-foreground">
-                        {certificate.title}
+                  <Link
+                    key={certificate.title}
+                    href={certificate.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group flex flex-col overflow-hidden rounded-2xl border border-border/60 bg-muted/10 shadow-subtle transition hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:ring-offset-2"
+                  >
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-primary/10 via-background to-emerald-500/10">
+                      <Image
+                        src={certificate.image}
+                        alt={`Preview of ${certificate.title} certificate`}
+                        fill
+                        sizes="(min-width: 1024px) 320px, (min-width: 640px) 45vw, 90vw"
+                        className="object-cover transition duration-500 group-hover:scale-105"
+                        priority={false}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent" />
+                    </div>
+                    <div className="flex items-start justify-between gap-3 px-4 py-3">
+                      <div className="space-y-1">
+                        <p className="text-base font-semibold text-foreground">
+                          {certificate.title}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {certificate.issuer}
+                        </p>
+                      </div>
+                      <span className="mt-1 rounded-full bg-primary/10 p-2 text-primary transition duration-200 group-hover:bg-primary group-hover:text-primary-foreground">
+                        <ArrowUpRight className="h-4 w-4" aria-hidden />
                       </span>
                     </div>
-                    <Link
-                      href={certificate.link}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-primary underline text-right"
-                    >
-                      {certificate.issuer}
-                    </Link>
-                  </li>
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
 
             <div className="rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
