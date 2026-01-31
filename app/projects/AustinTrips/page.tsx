@@ -91,7 +91,7 @@ const dashboards = [
     description:
       "Split demand by kiosk, subscription tier, and bike type to highlight emerging hotspots and maintenance pressure.",
     embedUrl:
-      "https://grafana.barati.tech/d/ae1ae6ae-ff58-4be8-96f0-58d253f8c87f/subscription-and-bike-type?orgId=1&from=1764654768235&to=1764676368235&kiosk=288&subscription_type=One%20Day%20Explorer%20Pass&vehicle_type=Electric%20Bike",
+      "https://grafana.barati.tech/d/ae1ae6ae-ff58-4be8-96f0-58d253f8c87f/subscription-and-bike-type?orgId=1&from=1764654768235&to=1764676368235&kiosk=288&subscription_type=One+Day+Explorer+Pass&vehicle_type=Electric+Bike",
     caption: "Weekday snapshots show commuter-heavy stations and fleet distribution risk.",
   },
   {
@@ -99,7 +99,7 @@ const dashboards = [
     description:
       "Hourly heatmaps cover every dock to align spare vehicle deployment with peak rides and special events.",
     embedUrl:
-      "https://grafana.barati.tech/d/d65f438c-e01d-4869-9f32-5b3dd81b4bfb/timely-dashboard?orgId=1&from=1764654807033&to=1764676407033&kiosk=288",
+      "https://grafana.barati.tech/d/d65f438c-e01d-4869-9f32-5b3dd81b4bfb/timely-dashboard?orgId=1&from=1769843745722&to=1769865345722",
     caption: "Rollups expose hourly spikes tied to festivals, weather, and university schedules.",
   },
 ];
