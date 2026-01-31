@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Max Barati — Technical Portfolio
 
-## Getting Started
+I design and ship data-centric products end to end: ingesting and modeling raw feeds, enforcing quality, and presenting decision-ready views with operational guardrails baked in.
 
-First, run the development server:
+## Capabilities and stack
+- **Programming & development:** Python, Docker.
+- **Warehousing and visualization:** dbt, Grafana.
+- **Cloud platforms:** AWS S3, AWS Glue.
+- **Database systems:** PostgreSQL, MongoDB.
+- **Big data & orchestration:** Apache Spark, Apache Airflow.
+- **Connected systems:** request/response and publish/subscribe patterns.
+- **Geospatial analysis:** QGIS, GeoPandas.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Featured work
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### PhDStudenti — research workflow helper
+Automates literature ingestion, metadata extraction, and citation hygiene so researchers can iterate on arguments instead of wrangling sources.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![PhDStudenti architecture](public/PhDStudentiOverallArchitecture.jpg)
+### AustinTrips — ETL for metro bike-share transparency
+Spark ETL → Postgres → Grafana. Twelve years of Austin bike-share telemetry are deduplicated, enriched with demand curves, and surfaced via embedded dashboards inside the case study page.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+![AustinTrips ETL architecture](public/AustinTripsETLHighLevelArchitecture.png)
 
-## Learn More
+### GlucoIoTBot — IoT telemetry with an assistive control loop
+Collects wearable device telemetry, normalizes it, and pairs it with an LLM assistant that summarizes anomalies and recommends operator actions to keep diabetics’ devices compliant.
 
-To learn more about Next.js, take a look at the following resources:
+![GlucoIoTBot architecture](public/GlucoOverallArchitecture.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Explore my projects and background in more details at **[barati.tech](https://barati.tech)**. 
