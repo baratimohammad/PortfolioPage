@@ -1,5 +1,31 @@
 [
   {
+    "slug": "NYCParkingViolations",
+    "title": "NYC Parking Violations",
+    "summary": "A dbt project that models NYC parking violations with a medallion architecture (bronze -> silver -> gold). The pipeline cleans raw data, enriches it with fee logic, and delivers analytics-ready tables for reporting.",
+    "heroImage": "/NYCMedallionArchitecture.jpg",
+    "role": "Personal project",
+    "tags": [
+      "ETL/ELT"
+    ],
+    "year": 2026,
+    "stack": [
+      "dbt",
+      "DuckDB",
+      "SQL"
+    ],
+    "links": {
+      "caseStudy": "/projects/NYCParkingViolations",
+      "github": "https://github.com/baratimohammad/dbt_parking_medallion"
+    },
+    "problem": "Analysts need a consistent, documented way to study NYC parking violations across time, location, and code categories.",
+    "goal": "Build a repeatable dbt pipeline that cleans, enriches, and models violations data for reporting.",
+    "approach": "Stage raw tables in bronze, standardize and enrich records in silver, then publish aggregated gold metrics.",
+    "results": "Analytics-ready tables with clear lineage from raw inputs to business metrics.",
+    "metrics": [],
+    "gallery": []
+  },
+  {
     "slug": "PhDStudenti",
     "title": "PhD Studenti ETL & Dashboards",
     "summary": "A fully containerized stack that ingests, transforms, enriches, and visualizes academic data to support data-driven monitoring of PhD student careers at Politecnico di Torino (DAUIN).",

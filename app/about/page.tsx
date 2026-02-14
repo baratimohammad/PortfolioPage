@@ -3,7 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 
-import MePortrait from "@/images/Cover.jpeg";
+import MePortrait from "@/images/Cover.jpg";
 
 const timeline = [
   {
@@ -30,9 +30,27 @@ const timeline = [
 const certificates = [
   {
     title: "DeepLearning.AI Data Engineering Specialization",
-    issuer: "DeepLearning.AI",
+    issuer: "DeepLearning.AI / Coursera",
     link: "https://coursera.org/share/6fbd06ee0463233473fdd2a9e68c87d6",
     image: "/certificates/DeepLearning_DataEng.png",
+  },
+  {
+    title: "AWS Certified Cloud Practitioner (CLF-C02) Cert Prep",
+    issuer: "LinkedIn Learning",
+    link: "https://www.linkedin.com/learning/certificates/28d918d30cf4a3626e001a6cb3ec4cc121ea1ef379a5bb7a9bd19e7f3ff62bc9?trk=share_certificate",
+    image: "/certificates/AWSCloudPractitionerPrep.png",
+  },
+  {
+    title: "Build Data Lakes and Data Warehouses on Google Cloud",
+    issuer: "Google Cloud / Coursera",
+    link: "https://coursera.org/share/c1078617e4aafbd3fadfd85de8bbe241",
+    image: "/certificates/BuildDataLakesandDataWarehousesonGoogleCloud.png",
+  },
+  {
+    title: "Problem-Solving Strategies for Data Engineers",
+    issuer: "LinkedIn Learning",
+    link: "https://www.linkedin.com/learning/certificates/fcfbf55d147c2535f6b875eff96011e8faecb5be35d1c70f713f15f9d7652602?trk=share_certificate",
+    image: "/certificates/LinkedInLearning-ProblemSolvingForDataEngineers.png",
   },
   {
     title: "Apache Spark Essential Training: Big Data Engineering",
@@ -99,63 +117,65 @@ export default function AboutPage() {
   return (
     <main className="flex flex-col gap-20 py-24">
       <section className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-10 rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle backdrop-blur md:grid-cols-[1.15fr,0.85fr] md:p-12">
-          <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-              About
-            </p>
-            <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              I Engineer the Backbone of Data-Driven Decisions.
-            </h1>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              I’m a data engineer with a Master’s degree in{" "}
-              <Link
-                href="https://www.polito.it/en/education/master-s-degree-programmes/digital-skills-for-sustainable-societal-transitions"
-                className="text-primary underline"
-              >
-                Digital Skills for Sustainable Societal Transitions
-              </Link>
-              , from Politecnico di Torino, Italy. I enjoy turning messy data into clean,
-              usable structures and building pipelines that make information actually
-              reachable. During my Master’s, I worked on projects that forced me to think
-              critically, take ownership, and deliver solutions under real constraints —
-              not just on paper.
-            </p>
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              I’m comfortable diving into problems, breaking them down, and figuring out how
-              to move from idea to working implementation. I adapt quickly, work well in fast-moving
-              environments, and collaborate tightly with teams to keep projects on track. My goal is
-              simple: grow into a reliable engineer who builds data tools and workflows that have
-              real impact.
-            </p>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {/*
-              <div className="rounded-2xl border border-border/60 p-4">
-                <p className="text-sm uppercase tracking-wide text-muted-foreground">
-                  Years in the craft
-                </p>
-                <p className="mt-1 text-3xl font-semibold text-foreground">10+</p>
+        <div className="rounded-3xl border border-border/60">
+          <div className="flex flex-col gap-10 rounded-3xl bg-background/70 p-8 shadow-subtle backdrop-blur md:flex-row md:items-center md:gap-12 md:p-12">
+            <div className="space-y-6 md:w-[60%]">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                About
+              </p>
+              <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+                I Engineer the Backbone of Data-Driven Decisions.
+              </h1>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                I’m a data engineer with a Master’s degree in{" "}
+                <Link
+                  href="https://www.polito.it/en/education/master-s-degree-programmes/digital-skills-for-sustainable-societal-transitions"
+                  className="text-primary underline"
+                >
+                  Digital Skills for Sustainable Societal Transitions
+                </Link>
+                , from Politecnico di Torino, Italy. I enjoy turning messy data into clean,
+                usable structures and building pipelines that make information actually
+                reachable. During my Master’s, I worked on projects that forced me to think
+                critically, take ownership, and deliver solutions under real constraints —
+                not just on paper.
+              </p>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                I’m comfortable diving into problems, breaking them down, and figuring out how
+                to move from idea to working implementation. I adapt quickly, work well in fast-moving
+                environments, and collaborate tightly with teams to keep projects on track. My goal is
+                simple: grow into a reliable engineer who builds data tools and workflows that have
+                real impact.
+              </p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {/*
+                <div className="rounded-2xl border border-border/60 p-4">
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                    Years in the craft
+                  </p>
+                  <p className="mt-1 text-3xl font-semibold text-foreground">10+</p>
+                </div>
+                <div className="rounded-2xl border border-border/60 p-4">
+                  <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                    Pipelines shipped
+                  </p>
+                  <p className="mt-1 text-3xl font-semibold text-foreground">60+</p>
+                </div>
+                */}
               </div>
-              <div className="rounded-2xl border border-border/60 p-4">
-                <p className="text-sm uppercase tracking-wide text-muted-foreground">
-                  Pipelines shipped
-                </p>
-                <p className="mt-1 text-3xl font-semibold text-foreground">60+</p>
-              </div>
-              */}
             </div>
-          </div>
-          <div className="relative">
-            <div className="flex h-full items-center justify-center rounded-3xl bg-muted/20 p-6">
-              <Image
-                src={MePortrait}
-                alt="Portrait of Max Barati"
-                width={MePortrait.width}
-                height={MePortrait.height}
-                className="rounded-2xl border border-border/60 object-cover"
-                sizes="(min-width: 768px) 280px, 60vw"
-                priority
-              />
+            <div className="relative md:w-[40%]">
+              <div className="flex h-full w-full items-center justify-center p-6 md:justify-end">
+                <Image
+                  src={MePortrait}
+                  alt="Portrait of Max Barati"
+                  width={MePortrait.width}
+                  height={MePortrait.height}
+                  className="aspect-square w-full max-w-[320px] rounded-full object-cover md:max-w-[480px]"
+                  sizes="(min-width: 1024px) 420px, (min-width: 768px) 360px, 80vw"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>
