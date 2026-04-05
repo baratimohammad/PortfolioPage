@@ -20,7 +20,7 @@ export default function PortfolioPage() {
             Platforms and experiences that move data to insight.
           </h1>
           <p className="text-lg leading-relaxed text-muted-foreground">
-            Explore projects across data visualization, applied machine learning, and
+            Explore projects across data visualization and
             the web experiences that bring them to life. Filter to focus on the work
             that aligns with your goals.
           </p>

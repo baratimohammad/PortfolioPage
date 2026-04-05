@@ -104,6 +104,8 @@ const dashboards = [
   },
 ];
 
+const grafanaHealthUrl = "https://grafana.barati.tech/api/health";
+
 const architectureSteps = [
   "Data acquisition: Automated via run_etl.sh; raw datasets land in data/raw.",
   "ETL processing: etl_main.py with Apache Spark performs feature engineering, dimension extraction, and measure computation.",
@@ -138,50 +140,71 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AustinTripsCaseStudyExclusive() {
+async function areDashboardsAvailable() {
+  if (process.env.GRAFANA_EMBEDS_ENABLED === "false") {
+    return false;
+  }
+
+  try {
+    const response = await fetch(grafanaHealthUrl, {
+      next: { revalidate: 60 },
+      signal: AbortSignal.timeout(3000),
+    });
+
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
+export default async function AustinTripsCaseStudyExclusive() {
+  const dashboardsAvailable = await areDashboardsAvailable();
+
   return (
     <main className="flex flex-col gap-16 py-24">
       <div className="mx-auto w-full max-w-6xl space-y-12 px-4 sm:px-6 lg:px-8">
-        <section className="space-y-6">
-          <header className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
-              Dashboards
-            </p>
-            <h2 className="text-3xl font-semibold text-foreground">
-              Embedded visibility for on-call teams
-            </h2>
-          </header>
-          <div className="grid gap-6">
-            {dashboards.map((dashboard) => (
-              <article
-                key={dashboard.title}
-                className="space-y-4 rounded-3xl border border-border/60 bg-background/70 p-4 shadow-subtle"
-              >
-                <div className="overflow-hidden rounded-2xl border border-border/50 bg-muted/20">
-                  <iframe
-                    src={dashboard.embedUrl}
-                    title={`${dashboard.title} Grafana embed`}
-                    className="w-full"
-                    style={{ height: "clamp(700px, calc(75vh + 200px), 1300px)" }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
-                </div>
-                <div className="flex flex-wrap gap-2 pt-2">
-                  <Link
-                    href={dashboard.embedUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="inline-flex items-center gap-1 rounded-full border border-border/70 px-3 py-1 text-xs font-semibold text-foreground transition hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
-                  >
-                    Open in Grafana
-                    <ArrowUpRight className="h-3 w-3" aria-hidden />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+        {dashboardsAvailable ? (
+          <section className="space-y-6">
+            <header className="space-y-2">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-muted-foreground">
+                Dashboards
+              </p>
+              <h2 className="text-3xl font-semibold text-foreground">
+                Embedded visibility for on-call teams
+              </h2>
+            </header>
+            <div className="grid gap-6">
+              {dashboards.map((dashboard) => (
+                <article
+                  key={dashboard.title}
+                  className="space-y-4 rounded-3xl border border-border/60 bg-background/70 p-4 shadow-subtle"
+                >
+                  <div className="overflow-hidden rounded-2xl border border-border/50 bg-muted/20">
+                    <iframe
+                      src={dashboard.embedUrl}
+                      title={`${dashboard.title} Grafana embed`}
+                      className="w-full"
+                      style={{ height: "clamp(700px, calc(75vh + 200px), 1300px)" }}
+                      loading="lazy"
+                      allowFullScreen
+                    />
+                  </div>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    <Link
+                      href={dashboard.embedUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex items-center gap-1 rounded-full border border-border/70 px-3 py-1 text-xs font-semibold text-foreground transition hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2"
+                    >
+                      Open in Grafana
+                      <ArrowUpRight className="h-3 w-3" aria-hidden />
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <section className="space-y-6 rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
           <header className="space-y-2">

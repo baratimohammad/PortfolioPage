@@ -26,8 +26,8 @@ export const services: readonly Service[] = [
     icon: Cog,
     keywords: [
       "Python",
+      "OOP",
       "Docker",
-      // "OOP",
     ],
     image: ProgrammingImage,
   },
@@ -44,8 +44,9 @@ export const services: readonly Service[] = [
     title: "Cloud Platforms",
     icon: Cog,
     keywords: [
-      "AWS S3",
-      "AWS Glue",
+      "Microsoft Fabric",
+      "Snowflake",
+      "AWS",
       // "AWS Redshift",
       // "AWS EMR",
       // // "Azure Data Factory",
@@ -57,8 +58,8 @@ export const services: readonly Service[] = [
     title: "Database Systems",
     icon: Cog,
     keywords: [
-      // "MySQL",
       "PostgreSQL",
+      "MySQL",
       "MongoDB",
     ],
     image: DatabaseSystemsImage,
@@ -133,7 +134,7 @@ export const services: readonly Service[] = [
 
 export function ServicesGrid() {
   return (
-    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
       {services.map(({ title, icon: Icon, keywords, outcomes, image }) => {
         const hasImage = Boolean(image);
         const visualWrapperClasses = hasImage

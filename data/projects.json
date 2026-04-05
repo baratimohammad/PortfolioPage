@@ -1,5 +1,44 @@
 [
   {
+    "slug": "NYCTaxiTrips",
+    "title": "NYC Taxi Trips",
+    "summary": "This project demonstrates the design and implementation of a modern data engineering pipeline using Microsoft Fabric. The pipeline ingests, transforms, and models real-world transportation data from the NYC Taxi & Limousine Commission, enabling structured analytics and interactive reporting.",
+    "heroImage": "/projects/FabricEnd2EndNYCTaxi.jpg",
+    "role": "Personal project",
+    "tags": [
+      "ETL/ELT",
+      "Cloud",
+      "Data Viz"
+    ],
+    "year": 2026,
+    "stack": [
+      "Microsoft Fabric",
+      "Microsoft Power BI",
+      "Azure Data Factory",
+      "Lakehouse",
+      "Warehouse",
+      "Data Flow Gen2",
+      "SQL"
+    ],
+    "links": {
+      "caseStudy": "/projects/NYCTaxiTrips",
+      "video": "https://drive.google.com/file/d/1wJcAZhFxQsAE49lEsKtQ7cXjQrYSMZmE/view?usp=drive_link"
+    },
+    "problem": "NYC Taxi & Limousine Commission data needed structured processing for analytics. Raw Parquet trip files and zone lookup CSV were ingested into a Fabric Lakehouse.",
+    "goal": "Build an end-to-end data pipeline in Microsoft Fabric for ingestion, transformation, orchestration, and reporting.",
+    "approach": "Implemented a Lakehouse-to-Warehouse architecture in Microsoft Fabric:\n\n- Ingested raw NYC TLC Parquet trip files and zone lookup CSV into the Lakehouse\n- Used Data Warehouse for staging (stg.nyctaxi_yellow) and curated (dbo.nyctaxi_yellow) tables\n- Orchestrated pipelines for ingestion, transformation, and enrichment via Dataflow Gen2\n- Added stored procedures for metadata tracking, logging, and validation\n- Built Power BI dashboards for trip analysis by volume, zones, and trends",
+    "results": "- Unified Fabric ecosystem for data engineering\n- Automated pipelines with metadata tracking\n- BI-ready datasets for trip analysis\n- Scalable architecture for real-world data",
+    "metrics": [],
+    "gallery": [
+      {
+        "src": "/projects/FabricEnd2EndNYCTaxiDashboard.png",
+        "alt": "NYC Taxi Trips dashboard in Power BI showing trip volumes and zones",
+        "width": 1200,
+        "height": 720
+      }
+    ]
+  },
+  {
     "slug": "NYCParkingViolations",
     "title": "NYC Parking Violations",
     "summary": "A dbt project that models NYC parking violations with a medallion architecture (bronze -> silver -> gold). The pipeline cleans raw data, enriches it with fee logic, and delivers analytics-ready tables for reporting.",

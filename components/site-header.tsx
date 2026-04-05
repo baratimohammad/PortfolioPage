@@ -44,7 +44,7 @@ export function SiteHeader() {
           className="text-lg font-semibold tracking-tight text-foreground transition-colors hover:text-primary"
           aria-label="Max home"
         >
-          Max Barati    -    Data Engineer | Data Analyst
+          Max Barati    -    Data Engineer | Data Scientist
         </Link>
 
         <nav

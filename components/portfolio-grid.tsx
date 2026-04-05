@@ -5,11 +5,12 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { Project } from "@/types/project";
 
-const TAG_FILTERS = ["ETL/ELT", "Data Viz", "IoT"] as const;
+const TAG_FILTERS = ["ETL/ELT", "Data Viz", "IoT", "Cloud"] as const;
 const normalizeTag = (tag: string) => tag.toLowerCase();
 
 export function PortfolioGrid({ projects }: { projects: Project[] }) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [expandedSlug, setExpandedSlug] = useState<string | null>(null);
 
   const normalizedProjects = useMemo(() => {
     return [...projects].sort((a, b) => b.year - a.year);
@@ -74,7 +75,7 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
       </div>
 
       <div
-        className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3"
+        className="grid gap-8 sm:grid-cols-2 xl:grid-cols-2"
         aria-live="polite"
         aria-busy={false}
       >
@@ -91,20 +92,21 @@ export function PortfolioGrid({ projects }: { projects: Project[] }) {
                 aria-describedby={`${project.slug}-summary`}
               >
                 <span className="sr-only">Open {project.title}</span>
-                <Image
-                  src={project.heroImage}
-                  alt={`${project.title} visualization`}
-                  width={640}
-                  height={420}
-                  className="h-56 w-full rounded-2xl object-cover transition duration-500 group-hover:scale-[1.04] group-focus-within:scale-[1.04]"
-                  sizes="(min-width: 1280px) 360px, (min-width: 640px) 50vw, 100vw"
-                  priority={index < 3}
-                />
-                <div
-                  className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition duration-300 group-hover:opacity-100 group-focus-within:opacity-100"
-                  aria-hidden="true"
-                >
-                  <p className="p-4 text-sm text-white/90">{project.summary}</p>
+                <div className="relative aspect-[1.414] overflow-hidden rounded-2xl">
+                  <Image
+                    src={project.heroImage}
+                    alt={`${project.title} visualization`}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-[1.04] group-focus-within:scale-[1.04]"
+                    sizes="(min-width: 1280px) 360px, (min-width: 640px) 50vw, 100vw"
+                    priority={index < 3}
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition duration-300 group-hover:opacity-100 group-focus-within:opacity-100"
+                    aria-hidden="true"
+                  >
+                    <p className="p-4 text-sm text-white/90">{project.summary}</p>
+                  </div>
                 </div>
               </Link>
               <div className="flex flex-col gap-2">

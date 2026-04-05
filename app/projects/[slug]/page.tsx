@@ -127,7 +127,7 @@ export default async function ProjectCaseStudy({ params }: ProjectPageParams) {
               <h2 id="project-approach" className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                 Approach
               </h2>
-              <p className="text-base leading-relaxed text-foreground">{project.approach}</p>
+              <p className="text-base leading-relaxed text-foreground" dangerouslySetInnerHTML={{ __html: project.approach.replace(/\n/g, '<br>') }} />
             </section>
 
             <section
@@ -138,7 +138,7 @@ export default async function ProjectCaseStudy({ params }: ProjectPageParams) {
                 <h2 id="project-results" className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                   Results &amp; Impact
                 </h2>
-                <p className="text-base leading-relaxed text-foreground">{project.results}</p>
+                <p className="text-base leading-relaxed text-foreground" dangerouslySetInnerHTML={{ __html: project.results.replace(/\n/g, '<br>') }} />
               </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {project.metrics.map((metric) => (
@@ -158,6 +158,24 @@ export default async function ProjectCaseStudy({ params }: ProjectPageParams) {
               </div>
             </section>
 
+            {project.links.video && (
+              <section className="space-y-4 rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                  Project Video
+                </h2>
+                <p className="text-base leading-relaxed text-foreground">
+                  <Link
+                    href={project.links.video}
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    className="underline decoration-primary/60 decoration-2 underline-offset-4 hover:text-primary"
+                  >
+                    Watch the project walkthrough
+                  </Link>
+                </p>
+              </section>
+            )}
+
             <section
               aria-labelledby="project-gallery"
               className="space-y-4 rounded-3xl border border-border/60 bg-background/70 p-8 shadow-subtle"
@@ -166,11 +184,8 @@ export default async function ProjectCaseStudy({ params }: ProjectPageParams) {
                 <h2 id="project-gallery" className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">
                   Gallery
                 </h2>
-                <p className="text-sm text-muted-foreground">
-                  Responsive snapshots highlighting key workflows and insight moments.
-                </p>
               </div>
-              <div className="grid gap-6 md:grid-cols-2">
+              <div className="grid gap-6">
                 {project.gallery.map((image) => (
                   <figure
                     key={image.src}

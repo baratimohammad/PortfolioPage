@@ -7,8 +7,8 @@ import MePortrait from "@/images/Cover.jpg";
 
 const timeline = [
   {
-    period: "January 2025 - May 2025",
-    title: "Data Engineering Internship, Politecnico di Torino - Italy",
+    period: "Nov 2024 - Jan 2026",
+    title: "Data Engineer, DAUIN, Politecnico di Torino - Italy",
     details: [
       "Designed ETL pipelines to analyze and monitor the academic performance of DAUIN department’s PhD students at Politecnico di Torino.",
       "Utilized Python for comprehensive data wrangling and transformation, ensuring high-quality, structured datasets ready for downstream analytics.",
@@ -18,11 +18,17 @@ const timeline = [
     ],
   },
   {
-    period: "July 2022 - September 2022",
-    title: "Quantitative Analyst Internship, MyDigiPay - Iran",
+    period: "May 2021 - September 2023",
+    title: "Data Engineer, MyDigiPay - Iran",
     details: [
-      "Conducted SQL queries and performed descriptive and inferential statistics analysis on financial data for credit scoring.",
-      "Collaborated with team members to develop machine learning models for classification and regression.",
+      "Managed data integration from multiple sources into the Data warehouse for reporting.",
+      "Resolved ETL bottlenecks, reduced batch job run times, troubleshot and resolved ETL job failures to meet SLAs.",
+      "Implemented Python and SQL-based ETL pipelines orchestrated with Apache Airflow.",
+      "Developed SQL transformations and aggregations powering reporting and analytical tables.",
+      "Prepared datasets and feature tables supporting machine learning models for credit scoring.",
+      "Assisted analysts with curated datasets and ad-hoc data extracts for reporting and exploratory analysis.",
+      "Implemented basic logging, error handling, and retry logic to improve pipeline stability.",
+      "Maintained pipeline documentation and ETL code in Git-based workflows.",
     ],
   },
 ] as const;
@@ -127,7 +133,7 @@ export default function AboutPage() {
                 I Engineer the Backbone of Data-Driven Decisions.
               </h1>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                I’m a data engineer with a Master’s degree in{" "}
+                I’m a data engineer and data scientist with a Master’s degree in{" "}
                 <Link
                   href="https://www.polito.it/en/education/master-s-degree-programmes/digital-skills-for-sustainable-societal-transitions"
                   className="text-primary underline"
