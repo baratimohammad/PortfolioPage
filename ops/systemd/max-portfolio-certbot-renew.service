@@ -1,0 +1,9 @@
+[Unit]
+Description=Renew Let's Encrypt certificates for Max Portfolio
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/max-portfolio
+ExecStart=/opt/max-portfolio/scripts/certbot-renew.sh

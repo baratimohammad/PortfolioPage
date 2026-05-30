@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Max Portfolio certificate renewal weekly
+
+[Timer]
+OnCalendar=Mon *-*-* 03:15:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target

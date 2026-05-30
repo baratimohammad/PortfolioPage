@@ -11,6 +11,7 @@ import GeoSpatialImage from "@/images/services/GeoSpatial.jpg";
 import ProgrammingImage from "@/images/services/Programming.jpg";
 import CloudPlatformsImage from "@/images/services/CloudPlatforms.jpg";
 import DataOrchestrationImage from "@/images/services/DataOrchestration2.jpg";
+import DataWarehouseImage from "@/images/services/Warehouse.png";
 
 type Service = {
   title: string;
@@ -22,37 +23,30 @@ type Service = {
 
 export const services: readonly Service[] = [
   {
-    title: "Programming & Development",
-    icon: Cog,
-    keywords: [
-      "Python",
-      "OOP",
-      "Docker",
-    ],
-    image: ProgrammingImage,
-  },
-  {
-    title: "Warehousing and Visualization",
-    icon: Cog,
-    keywords: [
-      "dbt",
-      "Grafana",
-    ],
-    image: DataAnalysisImage,
-  },
-  {
     title: "Cloud Platforms",
     icon: Cog,
     keywords: [
-      "Microsoft Fabric",
-      "Snowflake",
       "AWS",
+      "Snowflake",
+      "dbt Cloud",
+      "Microsoft Fabric",
       // "AWS Redshift",
       // "AWS EMR",
       // // "Azure Data Factory",
       // "Databricks",
     ],
     image: CloudPlatformsImage,
+  },
+  {
+    title: "Programming & Development",
+    icon: Cog,
+    keywords: [
+      "Python",
+      "SQL",
+      "Docker",
+      "Terraform",
+    ],
+    image: ProgrammingImage,
   },
   {
     title: "Database Systems",
@@ -63,6 +57,24 @@ export const services: readonly Service[] = [
       "MongoDB",
     ],
     image: DatabaseSystemsImage,
+  },
+  {
+    title: "Warehousing",
+    icon: Cog,
+    keywords: [
+      "dbt Core",
+      "Azure Data Factory",
+    ],
+    image: DataWarehouseImage,
+  },
+  {
+    title: "Visualization",
+    icon: Cog,
+    keywords: [
+      "Microsoft Power BI",
+      "Grafana",
+    ],
+    image: DataAnalysisImage,
   },
   {
     title: "Big Data & Orchestration",
@@ -134,7 +146,7 @@ export const services: readonly Service[] = [
 
 export function ServicesGrid() {
   return (
-    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
       {services.map(({ title, icon: Icon, keywords, outcomes, image }) => {
         const hasImage = Boolean(image);
         const visualWrapperClasses = hasImage

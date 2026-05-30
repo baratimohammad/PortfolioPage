@@ -87,7 +87,33 @@ If you issue certificates manually, reload nginx when finished:
 docker compose exec nginx nginx -s reload
 ```
 
-## 7. Routine Updates
+## 7. Enable Automatic Certificate Renewal
+
+The repo includes `scripts/certbot-renew.sh`, which performs `certbot renew`, ensures nginx is available for HTTP-01 challenges, and reloads nginx afterward.
+
+### Option A: systemd timer
+
+Install the bundled unit files:
+
+```bash
+sudo cp ops/systemd/max-portfolio-certbot-renew.service /etc/systemd/system/
+sudo cp ops/systemd/max-portfolio-certbot-renew.timer /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable --now max-portfolio-certbot-renew.timer
+sudo systemctl list-timers max-portfolio-certbot-renew.timer
+```
+
+To test it immediately:
+
+```bash
+sudo systemctl start max-portfolio-certbot-renew.service
+```
+
+### Option B: cron
+
+If you prefer cron, install the example entry from `ops/cron/letsencrypt-renew.cron` and replace `/path/to/max-portfolio` with your actual checkout path.
+
+## 8. Routine Updates
 
 ```bash
 cd /opt/max-portfolio
@@ -98,7 +124,7 @@ docker compose up -d
 
 Run these commands whenever you deploy new code or want the latest base images.
 
-## 8. Optional systemd Unit
+## 9. Optional systemd Unit
 
 Create a simple unit if you want the stack to start at boot:
 

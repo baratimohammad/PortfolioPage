@@ -14,7 +14,7 @@ const heroImageHeight = 1721;
 
 const thesisDetails = {
   program:
-    "Master’s Degree in Digital Skills for Sustainable Societal Transitions — Politecnico di Torino (DAUIN Department)",
+    "Spinoff project of Master’s Degree in Digital Skills for Sustainable Societal Transitions — Politecnico di Torino (DAUIN Department)",
   title:
     "Design of a Containerized Dashboard Platform and AI-Assisted Data Enrichment for Student Career Monitoring",
   description:

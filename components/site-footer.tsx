@@ -3,16 +3,16 @@ import Link from "next/link";
 const SOCIAL_LINKS = [
   {
     label: "GitHub",
-    href: "https://github.com/maxbarati",
+    href: "https://github.com/baratimohammad",
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/maxbarati",
+    href: "https://www.linkedin.com/in/mhmdbarati",
   },
-  {
-    label: "Email",
-    href: "mailto:hello@maxbarati.dev",
-  },
+  // {
+  //   label: "Email",
+  //   href: "mailto:hello@maxbarati.dev",
+  // },
 ];
 
 const LEGAL_LINKS = [

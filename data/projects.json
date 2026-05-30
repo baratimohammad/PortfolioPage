@@ -1,5 +1,31 @@
 [
   {
+    "slug": "nyc-bike-and-weather",
+    "title": "NYC Bike and Weather",
+    "summary": "This project integrates NYC bike data with weather information using an orchestrated ETL/ELT in Snowflake and dbt Cloud.",
+    "heroImage": "/nycbikeSnowflakeDBTGithub.jpg",
+    "role": "Personal project",
+    "tags": [
+      "ETL/ELT",
+      "Cloud"
+    ],
+    "year": 2026,
+    "stack": [
+      "Snowflake",
+      "dbt Cloud",
+      "GitHub"
+    ],
+    "links": {
+      "github": "https://github.com/baratimohammad/snowflake-dbt-nycbike/tree/dev"
+    },
+    "problem": "NYC bike trip data and weather data existed in separate systems, making it difficult to perform reliable correlation analysis on how weather conditions impact bike usage patterns.",
+    "goal": "Design and implement a scalable ETL/ELT pipeline to ingest, transform, and integrate bike and weather datasets in Snowflake, enabling structured analytical workflows.",
+    "approach": "Loaded bike trip data into Snowflake using internal stages via SnowSQL\nIntegrated weather data from an S3 bucket using Snowflake external stages\nIngested staged data into structured tables within Snowflake\nBuilt transformation models in dbt Cloud, including reusable macros\nConnected dbt Cloud to GitHub for version control and collaborative development\nDefined separate development and production environments in dbt\nOrchestrated data pipelines using:\nSnowflake tasks (cron-based) for automated data ingestion\ndbt job runs for transformation scheduling",
+    "results": "Delivered a fully automated, production-ready ETL/ELT pipeline that integrates bike and weather data within Snowflake. The system enables efficient, reproducible data transformations and supports analytical use cases such as correlation analysis between weather conditions and NYC bike usage patterns.",
+    "metrics": [],
+    "gallery": []
+  },
+  {
     "slug": "NYCTaxiTrips",
     "title": "NYC Taxi Trips",
     "summary": "This project demonstrates the design and implementation of a modern data engineering pipeline using Microsoft Fabric. The pipeline ingests, transforms, and models real-world transportation data from the NYC Taxi & Limousine Commission, enabling structured analytics and interactive reporting.",
@@ -21,8 +47,7 @@
       "SQL"
     ],
     "links": {
-      "caseStudy": "/projects/NYCTaxiTrips",
-      "video": "https://drive.google.com/file/d/1wJcAZhFxQsAE49lEsKtQ7cXjQrYSMZmE/view?usp=drive_link"
+      "caseStudy": "/projects/NYCTaxiTrips"
     },
     "problem": "NYC Taxi & Limousine Commission data needed structured processing for analytics. Raw Parquet trip files and zone lookup CSV were ingested into a Fabric Lakehouse.",
     "goal": "Build an end-to-end data pipeline in Microsoft Fabric for ingestion, transformation, orchestration, and reporting.",

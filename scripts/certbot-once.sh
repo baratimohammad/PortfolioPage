@@ -16,8 +16,8 @@ CERTBOT_WWW_DIR="${PROJECT_ROOT}/docker/certbot/www"
 
 mkdir -p "$CERTBOT_CONF_DIR" "$CERTBOT_WWW_DIR"
 
-# Ensure nginx is up to serve HTTP-01 challenges
-docker compose up -d nginx
+# Ensure nginx is up to serve HTTP-01 challenges without touching app containers.
+docker compose up -d --no-deps nginx
 
 DOMAIN_FLAGS=()
 for domain in "${DOMAINS[@]}"; do
